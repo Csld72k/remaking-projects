@@ -31,14 +31,14 @@ function getName() {
 		alert("O nome do(a) paciente não pode conter números ou caracteres especiais, apenas letras.")
 		getName()
 	}
-	
+
 	name = capitalizesFirstLetterLowercaseRest(name)
-	
+
 	return name
 }
 
 function getAge(patientName) {
-	let age = prompt (`Digite a idade do(a) ${patientName}`)
+	let age = prompt(`Digite a idade do(a) ${patientName}`)
 	if (age.length === 0 || age === undefined || !regexNumbers.test(age)) {
 		alert("Entrada inválida. Digite apenas números")
 		getAge(patientName)
@@ -47,7 +47,7 @@ function getAge(patientName) {
 }
 
 function getWeight(patientName) {
-	let weight = prompt (`Digite o peso do(a) ${patientName} em quilogramas.`)
+	let weight = prompt(`Digite o peso do(a) ${patientName} em quilogramas.`)
 	if (weight.length === 0 || weight === undefined || !regexNumbers.test(weight)) {
 		alert("Entrada inválida. Digite apenas números.")
 		getWeight(patientName)
@@ -56,7 +56,7 @@ function getWeight(patientName) {
 }
 
 function getHeight(patientName) {
-	let height = prompt (`Digite a altura do(a) ${patientName} em centímetros.`)
+	let height = prompt(`Digite a altura do(a) ${patientName} em centímetros.`)
 	if (height.length === 0 || height === undefined || !regexNumbers.test(height)) {
 		alert("Entrada inválida. Digite apenas números.")
 		getHeight(patientName)
@@ -91,29 +91,29 @@ function capitalizesFirstLetterLowercaseRest(patientName) {
 
 	let list = []
 	/*patientName = patientName.split(" ")
-  for (let name of patientName) {
-    if (name.length !== 0) {
-      //Aqui removo os espaços em branco
-      name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
-      list.push(name)
-    }
-  }*/
+	for (let name of patientName) {
+			if (name.length !== 0) {
+			//Aqui removo os espaços em branco
+			name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
+			list.push(name)
+			}
+	}*/
 	patientName = patientName.split(" ")
 	for (let name of patientName) {
 		if (name === "da" || name === "das" || name === "de" || name === "do" || name === "dos") list.push(name.toLowerCase())
 		else list.push(name.charAt(0).toUpperCase() + name.slice(1).toLowerCase())
-		
+
 	}
-	
+
 	return removeWhitespaces(list).join(" ")
 }
 
 function showPatients(list) {
 	let listToShow = []
-	
+
 	for (let patient of list) {
 		patient.name = //capitalizesFirstLetterLowercaseRest(patient.name)
-		listToShow.push(`Nome: ${patient.name} Idade: ${patient.age} Peso: ${patient.weight} Altura: ${patient.height}
+			listToShow.push(`Nome: ${patient.name} Idade: ${patient.age} Peso: ${patient.weight} Altura: ${patient.height}
 			`)
 
 	}
@@ -129,7 +129,7 @@ function searchByName() {
 
 	if (regexLetters.test(nameToSearch) && typeof nameToSearch === "string" && nameToSearch.trim().length > 0) {
 		for (let patient of patientList) {
-			
+
 			if (patient.name.toLowerCase().includes(nameToSearch.toLowerCase())) list.push(patient)
 
 		}
@@ -156,7 +156,7 @@ function searchByAge() {
 		for (let patient of patientList) {
 			if (patient.age === ageToSearch) list.push(patient)
 		}
-		
+
 		if (list.length === 0) {
 			alert("Paciente não encontrado.")
 			mainMenu()
@@ -174,12 +174,12 @@ function searchByAge() {
 function searchByWeight() {
 	let list = []
 	let weightToSearch = Number(prompt("Digite o peso que deseja buscar."))
-	
+
 	if (regexNumbers.test(weightToSearch) && weightToSearch > 0) {
 		for (let patient of patientList) {
 			if (patient.weight === weightToSearch) list.push(patient)
 		}
-		
+
 		if (list.length === 0) {
 			alert("Paciente não encontrado.")
 			mainMenu()
@@ -195,12 +195,12 @@ function searchByWeight() {
 function searchByHeight() {
 	let list = []
 	let heightToSearch = Number(prompt("Digite a altura que deseja buscar."))
-	
+
 	if (regexNumbers.test(heightToSearch) && heightToSearch > 0) {
 		for (let patient of patientList) {
 			if (patient.height === heightToSearch) list.push(patient)
 		}
-		
+
 		if (list.length === 0) {
 			alert("Paciente não encontrado.")
 			searchByHeight()
@@ -244,13 +244,13 @@ function showSpecificPatient() {
 		default:
 			alert("Digite uma opção válida.")
 			showSpecificPatient()
-		}
 	}
+}
 
-	function consultPatientList() {
-		if (patientList.length === 0) alert("Ainda não existem pacientes cadastrados.")
-		else {
-			let options = Number(prompt(`
+function consultPatientList() {
+	if (patientList.length === 0) alert("Ainda não existem pacientes cadastrados.")
+	else {
+		let options = Number(prompt(`
 				Escolha uma opção.
 
 				  1. Mostrar todos os pacientes.
@@ -258,26 +258,26 @@ function showSpecificPatient() {
 				  3. Voltar.
 				`))
 
-			switch (options) {
-				case 1:
-					alert(showPatients(patientList))
-					mainMenu()
-					break
-				case 2:
-					showSpecificPatient()
-					break
-				case 3:
-					mainMenu()
-					break
-				default:
-					alert("Digite uma opção válida!")
-					consultPatientList()
-				}
-			}
+		switch (options) {
+			case 1:
+				alert(showPatients(patientList))
+				mainMenu()
+				break
+			case 2:
+				showSpecificPatient()
+				break
+			case 3:
+				mainMenu()
+				break
+			default:
+				alert("Digite uma opção válida!")
+				consultPatientList()
 		}
+	}
+}
 
-		function mainMenu() {
-			menu = Number(prompt(`
+function mainMenu() {
+	menu = Number(prompt(`
 				Olá usuário, digite o número da opção desejada.
 
 				  1. Cadastrar paciente.
@@ -285,19 +285,19 @@ function showSpecificPatient() {
 				  3. Sair.
 				`))
 
-			switch (menu) {
-				case 1:
-					registerPatient()
-					break
-				case 2:
-					consultPatientList()
-					break
-				case 3:
-					break
-				default:
-					alert("Digite uma opção válida!")
-					mainMenu()
-				}
-			}
-
+	switch (menu) {
+		case 1:
+			registerPatient()
+			break
+		case 2:
+			consultPatientList()
+			break
+		case 3:
+			break
+		default:
+			alert("Digite uma opção válida!")
 			mainMenu()
+	}
+}
+
+mainMenu()
