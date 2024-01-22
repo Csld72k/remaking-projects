@@ -3,7 +3,7 @@
   - While()
 [] Gerar número aleatório;
 [] Tipos de dados: NaN
-  - Not a Number <|> Não é um Número;
+  - Not a Number;
 [] Tipo de erro: SyntaxError
   - Erro de sintaxe/escrita;
 [] Math
