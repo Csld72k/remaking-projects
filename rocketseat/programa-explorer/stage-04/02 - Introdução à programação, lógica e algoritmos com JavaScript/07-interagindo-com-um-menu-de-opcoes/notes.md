@@ -18,4 +18,5 @@ Perguntas a serem feitas:
 
 
 # Notes
-  * .push() => Adiciona o elemento passado como atributo ao final do array;
+  * Array.push() => Adiciona o elemento passado como atributo ao final do array;
+  * String.trim() =>  Remove os espaços em branco (whitespaces) do início e/ou fim de um texto.
