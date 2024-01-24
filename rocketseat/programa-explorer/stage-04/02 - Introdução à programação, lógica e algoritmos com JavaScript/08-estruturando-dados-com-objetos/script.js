@@ -25,7 +25,6 @@
 
 *	A primeira letra de cada nome e sobrenome devem ser maiúsculas e as demais minúsculas, exceto da/das/de/do/dos.
 
-
 */
 
 // Lembrar de deixar esse código todo comentado para um estudo futuro
@@ -106,46 +105,24 @@ function registerPatient() {
 	mainMenu()
 }
 
-function removeWhitespaces(patientName) {
-	let list = []
-	//patientName = patientName.split(" ")
-	for (let name of patientName) {
-		if (name.length !== 0) list.push(name)
+function capitalizesFirstLetterLowercaseRest(oldPatientName) {
+	let newPatientName = []
+
+	oldPatientName = oldPatientName.split(" ").filter(value => value != "")	/*	Nessa linha de código, remove os espaços em branco desnecessários adicionados pelo usuário. No método filter() foi passada uma arrow function onde value é o valor de cada índice do array oldPatientName e ao percorrer cada valor, retornará apenas o que for diferente de "" que representa o espaço em branco	*/
+
+	for (let name of oldPatientName) {
+		if (name === "da" || name === "das" || name === "de" || name === "do" || name === "dos") newPatientName.push(name.toLowerCase())
+		else newPatientName.push(name.charAt(0).toUpperCase() + name.slice(1).toLowerCase())
 	}
-
-	return list
-}
-
-function capitalizesFirstLetterLowercaseRest(patientName) {
-	//removeWhitespaces(patientName)
-
-	let list = []
-	/*patientName = patientName.split(" ")
-	for (let name of patientName) {
-			if (name.length !== 0) {
-			//Aqui removo os espaços em branco
-			name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
-			list.push(name)
-			}
-	}*/
-	patientName = patientName.split(" ")
-	for (let name of patientName) {
-		if (name === "da" || name === "das" || name === "de" || name === "do" || name === "dos") list.push(name.toLowerCase())
-		else list.push(name.charAt(0).toUpperCase() + name.slice(1).toLowerCase())
-
-	}
-
-	return removeWhitespaces(list).join(" ")
+	return newPatientName.join(" ")
 }
 
 function showPatients(list) {
 	let listToShow = []
 
 	for (let patient of list) {
-		patient.name = //capitalizesFirstLetterLowercaseRest(patient.name)
-			listToShow.push(`Nome: ${patient.name} Idade: ${patient.age} Peso: ${patient.weight} Altura: ${patient.height}
-			`)
-
+		patient.name = capitalizesFirstLetterLowercaseRest(patient.name)
+		listToShow.push(`${patient.name}, ${patient.age} anos, ${patient.weight}kg, ${patient.height}cm`)
 	}
 
 	listToShow = listToShow.join("\n") // O "\n" serve para dar uma break role (quebra de linha)
