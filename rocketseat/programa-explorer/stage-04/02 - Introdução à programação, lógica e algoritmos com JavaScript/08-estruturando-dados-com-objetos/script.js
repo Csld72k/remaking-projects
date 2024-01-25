@@ -1,29 +1,25 @@
 /*
 
-! Organizar os comentários na ordem mais adequada.
+  * Faça um programa que tenha um menu a apresente a seguinte mensagem:
+    "Olá usuário, digite o número da opção desejada.
 
+      1.  Cadastrar paciente.
+      2.  Listar pacientes.
+      3.  Sair.".
+        
+  * Caso o usuário digite 1, ele poderá cadastrar um paciente no sistema. Devem ser coletados o nome completo, idade, peso e altura do paciente. Em seguida mostre a seguinte mensagem:
+    "${firstName} foi cadastrado no sistema."
 
+  * Caso o usuário digite 2, ele poderá listar os pacientes. O sistema deve disponibilizar as opções de listar todos os pacientes ou buscar por dados específicos como nome, idade, peso e altura.
 
-* Faça um programa que tenha um menu a apresente a seguinte mensagem:
-  "Olá usuário, digite o número da opção desejada.
+  * Caso o usuário digite 3, encerre a aplicação e mostre a seguinte mensagem:
+    "Aplicação encerrada.".
 
-    1.  Cadastrar paciente.
-    2.  Listar pacientes.
-    3.  Sair.".
-      
-* Caso o usuário digite 1, ele poderá cadastrar um paciente no sistema. Devem ser coletados o nome completo, idade, peso e altura do paciente. Em seguida mostre a seguinte mensagem:
-  "${firstName} foi cadastrado no sistema."
+  * Caso o usuário digite espaço em branco no primeiro e/ou último caractere, remova esse espaço em branco.
 
-* Caso o usuário digite 2, ele poderá listar os pacientes. O sistema deve disponibilizar as opções de listar todos os pacientes ou buscar por dados específicos como nome, idade, peso e altura.
+  * O sistema deve ter uma opção de voltar ao menu anterior em cada etapa diferente de seleção de opções e deve ser sempre a última opção.
 
-* Caso o usuário digite 3, encerre a aplicação e mostre a seguinte mensagem:
-  "Aplicação encerrada.".
-
-* Caso o usuário digite espaço em branco no primeiro e/ou último caractere, remova esse espaço em branco.
-
-* O sistema deve ter uma opção de voltar ao menu anterior em cada etapa diferente de seleção de opções e deve ser sempre a última opção.
-
-*	A primeira letra de cada nome e sobrenome devem ser maiúsculas e as demais minúsculas, exceto da/das/de/do/dos.
+  *	A primeira letra de cada nome e sobrenome devem ser maiúsculas e as demais minúsculas, exceto da/das/de/do/dos.
 
 */
 
@@ -103,6 +99,7 @@ function registerPatient() {
   patient.height = getHeight(patient.name)
 
   patientList.push(patient)
+  alert(`${patient.name} foi cadastrado no sistema.`)
   mainMenu()
 }
 
@@ -113,7 +110,9 @@ function capitalizesFirstLetterLowercaseRest(oldPatientName) {
 
   for (let name of oldPatientName) {
     if (name === "da" || name === "das" || name === "de" || name === "do" || name === "dos") newPatientName.push(name.toLowerCase())
-    else newPatientName.push(name.charAt(0).toUpperCase() + name.slice(1).toLowerCase())
+    else newPatientName.push(name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()) /* O método charAt() retorna o caractere especificado a partir de uma string.
+    O método slice() extrai uma parte de uma string e a retorna como uma nova string, sem modificar a string original.
+    Neste caso em específico, foi usado o charAt(0) para pegar o primeiro caractere da String e torná-lo maiúsculo. O slice(1) foi usado para pegar os caracteres da String a partir da posição 1 e torná-los minúsculas. */
   }
   return newPatientName.join(" ")
 }
@@ -260,7 +259,7 @@ function consultPatientList() {
 
   1.  Mostrar todos os pacientes.
   2.  Buscar por paciente específico.
-  3.   Voltar.`))
+  3.  Voltar.`))
 
     switch (options) {
       case 1:
