@@ -22,9 +22,6 @@
   *	A primeira letra de cada nome e sobrenome devem ser maiúsculas e as demais minúsculas, exceto da/das/de/do/dos.
 
 */
-
-// Lembrar de deixar esse código todo comentado para um estudo futuro
-
 class Patient {
   constructor(name, age, weight, height) {
     this.name = name
