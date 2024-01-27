@@ -16,16 +16,23 @@
 <body>
 
   <main>
-    <div class="gameScreen disabled">
+
+    <div class="gameScreen ">
       <div class="title">
         <h1>Guessing Game</h1>
         <p>Guess the number between 0 and 10</p>
       </div>
       <form>
-        <input type="number" id="chosenNumber">
+        <input type="number" id="chosenNumber" min="0" max="10">
         <input type="button" id="buttonTry" value="Try">
       </form>
     </div>
+
+    <div class="winScreen disabled">
+      <h1>You got it right in 5 tries!</h1>
+      <input type="button" id="buttonTry" value="Play again">
+    </div>
+
   </main>
 
 </body>
