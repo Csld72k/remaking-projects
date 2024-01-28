@@ -96,6 +96,12 @@ form {
   border-radius: 0 .4rem .4rem 0;
   background: #7879F1;
   color: #fff;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+#buttonTry:hover {
+  background: #6363ce;
 }
 
 /*  -----↑↑-----  gameScreen  -----↑↑----- */
