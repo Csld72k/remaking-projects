@@ -54,7 +54,6 @@ main {
 /*  -----↓↓-----  gameScreen  -----↓↓----- */
 
 h1 {
-  /* width: ; */
   margin-bottom: 1.6rem;
 
   font-family: 'Montserrat', sans-serif;
@@ -79,11 +78,7 @@ form {
 #chosenNumber {
   width: 4.3rem;
   height: 5.3rem;
-  /* padding-left: 2rem; */
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  padding-left: 1rem;
+  padding: 0 .3rem 0 1rem;
 
   text-align: center;
 
