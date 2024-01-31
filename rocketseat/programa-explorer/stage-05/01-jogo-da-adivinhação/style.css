@@ -86,7 +86,7 @@ form {
   border-radius: .4rem 0 0 .4rem
 }
 
-#buttonTry {
+#buttonTry, #buttonPlayAgain {
   width: 6.2rem;
   height: 5.3rem;
 
@@ -100,7 +100,7 @@ form {
   transition: background .2s;
 }
 
-#buttonTry:hover {
+#buttonTry:hover, #buttonPlayAgain:hover {
   background: #6363ce;
 }
 
@@ -113,7 +113,7 @@ form {
   margin-bottom: 3.3rem;
 }
 
-.winScreen #buttonTry {
+#buttonPlayAgain {
   width: 15rem;
   height: 5.3rem;
 
