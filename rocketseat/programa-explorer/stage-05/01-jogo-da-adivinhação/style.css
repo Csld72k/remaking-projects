@@ -71,8 +71,16 @@ p {
 
 form {
   margin-top: 4.8rem;
+}
+
+.container {
+  width: fit-content;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
+
+  border-radius: .4rem;
+  animation: incorrectAttemptsAnimation .2s 0s 6 alternate linear none
 }
 
 #inputNumber {
@@ -83,7 +91,7 @@ form {
   text-align: center;
 
   background: #DCE2E9;
-  border-radius: .4rem 0 0 .4rem
+  border-radius: .4rem 0 0 .4rem;
 }
 
 #buttonTry, #buttonPlayAgain {
@@ -121,3 +129,15 @@ form {
 }
 
 /*  -----↑↑-----  winScreen  -----↑↑----- */
+
+@keyframes incorrectAttemptsAnimation {
+  from {
+    color: #aa0000;
+    outline: .2rem solid #aa0000;
+  }
+
+  to {
+    color: #f00;
+    outline: .2rem solid #f00;
+  }
+}
