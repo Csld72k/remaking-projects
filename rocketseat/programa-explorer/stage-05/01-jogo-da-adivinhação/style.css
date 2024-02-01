@@ -80,7 +80,6 @@ form {
   margin: 0 auto;
 
   border-radius: .4rem;
-  animation: incorrectAttemptsAnimation .2s 0s 6 alternate linear none
 }
 
 #inputNumber {

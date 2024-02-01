@@ -13,12 +13,9 @@ randomNumber = generateRandomNumber()
 console.log(randomNumber)
 
 function incorrectAttempts() {
-  /* 
-
-    Aqui vou fazer uma forma de ativar uma animação CSS que indique ao usuário que ele introduziu um resposta incorreta, algo como tremer o botão e colocar ele em vermelho ou algo do tipo.
-    !  Ainda vou fazer a animação.
-    
-  */
+  let formContainer = document.querySelector(".container")
+  formContainer.style.animation = "incorrectAttemptsAnimation .2s 0s 6 alternate linear none"
+  setTimeout(() => { formContainer.style.animation = "" }, 1200)
 }
 
 function verifyIfAnswerMatch() {
