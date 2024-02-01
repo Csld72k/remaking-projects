@@ -1,6 +1,6 @@
 let gameScreen = document.querySelector(".gameScreen")
 let winScreen = document.querySelector(".winScreen")
-// let inputNumber = document.querySelector("#inputNumber")
+let form = document.querySelector("form")
 let buttonTry = document.querySelector("#buttonTry")
 let buttonPlayAgain = document.querySelector("#buttonPlayAgain")
 let randomNumber
@@ -25,8 +25,7 @@ function incorrectAttempts() {
   setTimeout(() => { formContainer.style.animation = "" }, 1200)
 }
 
-function verifyIfAnswerMatch(Event) {
-  Event.preventDefault()
+function verifyIfAnswerMatch() {
   let chosenNumber = document.querySelector("#inputNumber").value
 
   if (chosenNumber.length === 0) return incorrectAttempts()
@@ -54,5 +53,6 @@ function eventToPrevent(event) {
   event.preventDefault()
 }
 
+form.addEventListener("submit", (event) => event.preventDefault(event))
 buttonTry.addEventListener("click", verifyIfAnswerMatch)
 buttonPlayAgain.addEventListener("click", newGame)
