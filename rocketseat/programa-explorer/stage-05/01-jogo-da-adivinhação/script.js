@@ -1,6 +1,7 @@
 let gameScreen = document.querySelector(".gameScreen")
 let winScreen = document.querySelector(".winScreen")
 let form = document.querySelector("form")
+let inputNumber = document.querySelector("#inputNumber")
 let buttonTry = document.querySelector("#buttonTry")
 let buttonPlayAgain = document.querySelector("#buttonPlayAgain")
 let randomNumber
@@ -21,12 +22,17 @@ function toggleScreen() {
 
 function incorrectAttempts() {
   let formContainer = document.querySelector(".container")
+
+  inputNumber.value = ""
   formContainer.style.animation = "incorrectAttemptsAnimation .2s 0s 6 alternate linear none"
   setTimeout(() => { formContainer.style.animation = "" }, 1200)
 }
 
-function verifyIfAnswerMatch() {
-  let chosenNumber = document.querySelector("#inputNumber").value
+function verifyIfAnswerMatch(event) {
+  event.preventDefault(event)
+
+  // let chosenNumber = document.querySelector("#inputNumber").value
+  let chosenNumber = inputNumber.value
 
   if (chosenNumber.length === 0) return incorrectAttempts()
 
@@ -34,9 +40,11 @@ function verifyIfAnswerMatch() {
 
   if (Number(chosenNumber) === randomNumber) {
     let winText = document.querySelector(".winScreen h1")
-    console.log(attempts)
+    let tries
 
-    attempts === 1 ? winText.innerHTML = `You got it right in ${attempts} try!` : winText.innerHTML = `You got it right in ${attempts} tries!`
+    attempts === 1 ? tries = "try" : tries = "tries"
+    winText.innerHTML = `You got it right in ${attempts} ${tries}!`
+
     toggleScreen()
   }
   else incorrectAttempts()
@@ -44,8 +52,9 @@ function verifyIfAnswerMatch() {
 
 function newGame() {
   attempts = 0
-  document.querySelector("#inputNumber").value = ""
+  // inputNumber.value = ""
   randomNumber = generateRandomNumber()
+  console.log(randomNumber)
   toggleScreen()
 }
 
@@ -53,6 +62,6 @@ function eventToPrevent(event) {
   event.preventDefault()
 }
 
-form.addEventListener("submit", (event) => event.preventDefault(event))
+// form.addEventListener("submit", (event) => event.preventDefault(event))
 buttonTry.addEventListener("click", verifyIfAnswerMatch)
 buttonPlayAgain.addEventListener("click", newGame)

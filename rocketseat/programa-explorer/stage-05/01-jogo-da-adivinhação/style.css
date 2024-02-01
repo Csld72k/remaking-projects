@@ -91,6 +91,7 @@ form {
 
   background: #DCE2E9;
   border-radius: .4rem 0 0 .4rem;
+  outline: none;
 }
 
 #buttonTry, #buttonPlayAgain {
