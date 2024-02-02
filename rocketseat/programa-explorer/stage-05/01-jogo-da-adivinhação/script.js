@@ -63,7 +63,7 @@ function eventToPrevent(event) {
 }
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Enter" && gameScreen.classList.contains("disabled")) newGame()
+  if ((event.key === "Enter" || event.key === " ") && gameScreen.classList.contains("disabled")) newGame()
 })
 buttonTry.addEventListener("click", verifyIfAnswerMatch)
 buttonPlayAgain.addEventListener("click", newGame)
