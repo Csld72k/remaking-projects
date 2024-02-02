@@ -62,6 +62,8 @@ function eventToPrevent(event) {
   event.preventDefault()
 }
 
-// form.addEventListener("submit", (event) => event.preventDefault(event))
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" && gameScreen.classList.contains("disabled")) newGame()
+})
 buttonTry.addEventListener("click", verifyIfAnswerMatch)
 buttonPlayAgain.addEventListener("click", newGame)
