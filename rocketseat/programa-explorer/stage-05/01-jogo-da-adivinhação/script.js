@@ -1,9 +1,9 @@
 let gameScreen = document.querySelector(".gameScreen")
 let winScreen = document.querySelector(".winScreen")
-// let form = document.querySelector("form")
 let inputNumber = document.querySelector("#inputNumber")
 let buttonTry = document.querySelector("#buttonTry")
 let buttonPlayAgain = document.querySelector("#buttonPlayAgain")
+let formContainer = document.querySelector(".container")
 let randomNumber
 let attempts = 0
 
@@ -21,12 +21,17 @@ function toggleScreen() {
 }
 
 function incorrectAttempts() {
-  let formContainer = document.querySelector(".container")
-
   inputNumber.value = ""
+  inputNumber.disabled, buttonTry.disabled = true
+  inputNumber.readOnly = true
   inputNumber.style.outline = "none"
-  formContainer.style.animation = "incorrectAttemptsAnimation .2s 0s 6 alternate linear none"
-  setTimeout(() => { formContainer.style.animation = ""; inputNumber.style.removeProperty("outline") }, 1200)
+  formContainer.style.animation = "incorrectAttemptsAnimation .1s 0s 6 alternate linear none"
+  setTimeout(() => {
+    inputNumber.disabled, buttonTry.disabled = false
+    inputNumber.readOnly = false
+    formContainer.style.animation = ""
+    inputNumber.style.removeProperty("outline")
+  }, 600)
 }
 
 function verifyIfAnswerMatch(event) {
@@ -45,6 +50,9 @@ function verifyIfAnswerMatch(event) {
     attempts === 1 ? tries = "try" : tries = "tries"
     winText.innerHTML = `You got it right in ${attempts} ${tries}!`
 
+    formContainer.style.animation = ""
+    inputNumber.style.removeProperty("outline")
+
     toggleScreen()
   }
   else incorrectAttempts()
@@ -56,12 +64,16 @@ function newGame() {
   randomNumber = generateRandomNumber()
   console.log(randomNumber)
   toggleScreen()
+  buttonTry.disabled = true
+  inputNumber.focus()
+  setTimeout(() => { buttonTry.disabled = false }, 1)
 }
 
 function eventToPrevent(event) {
   event.preventDefault()
 }
 
+inputNumber.focus()
 document.addEventListener("keydown", (event) => {
   if ((event.key === "Enter" || event.key === " ") && gameScreen.classList.contains("disabled")) newGame()
 })
