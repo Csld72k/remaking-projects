@@ -4,6 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <title>BMI Calculator</title>
 </head>
 
@@ -12,9 +16,9 @@
   <main>
     <h1>BMI calculation</h1>
     <form>
-      <label for="#inputWeight">Weight(Kg)</label>
+      <label for="inputWeight">Weight(Kg)</label>
       <input type="number" id="inputWeight">
-      <label for="#inputHeight">Height(cm)</label>
+      <label for="inputHeight">Height(cm)</label>
       <input type="number" id="inputHeight">
       <button id="calculate">Calculate BMI<svg width="13" height="12" viewBox="0 0 13 12" fill="none"
           xmlns="http://www.w3.org/2000/svg">
@@ -27,7 +31,12 @@
 
   <div class="modal disabled">
     <h1>Your BMI is X</h1>
-    <button id="closeModal"></button>
+    <button id="closeModal"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
+          fill="#0c3440" fill-opacity="0.6" />
+      </svg>
+    </button>
   </div>
 
 </body>
