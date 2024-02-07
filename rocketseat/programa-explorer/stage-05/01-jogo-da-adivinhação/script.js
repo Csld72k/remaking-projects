@@ -7,6 +7,14 @@ let formContainer = document.querySelector(".container")
 let randomNumber
 let attempts = 0
 
+inputNumber.focus()
+
+buttonTry.addEventListener("click", verifyIfAnswerMatch)
+buttonPlayAgain.addEventListener("click", newGame)
+document.addEventListener("keydown", (event) => {
+  if ((event.key === "Enter" || event.key === " ") && gameScreen.classList.contains("disabled")) newGame()
+})
+
 function generateRandomNumber() {
   return randomNumber = Math.round(Math.random() * 10)
 }
@@ -60,16 +68,8 @@ function newGame() {
   attempts = 0
   inputNumber.value = ""
   randomNumber = generateRandomNumber()
-  console.log(randomNumber)
   toggleScreen()
   buttonTry.disabled = true
   inputNumber.focus()
   setTimeout(() => { buttonTry.disabled = false }, 1)
 }
-
-inputNumber.focus()
-document.addEventListener("keydown", (event) => {
-  if ((event.key === "Enter" || event.key === " ") && gameScreen.classList.contains("disabled")) newGame()
-})
-buttonTry.addEventListener("click", verifyIfAnswerMatch)
-buttonPlayAgain.addEventListener("click", newGame)
