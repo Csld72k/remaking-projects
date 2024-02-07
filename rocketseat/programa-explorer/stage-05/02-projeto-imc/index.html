@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+</head>
+
+<body>
+
+  <main>
+    <h1>BMI calculation</h1>
+    <form>
+      <label for="#inputWeight">Weight(Kg)</label>
+      <input type="number" id="inputWeight">
+      <label for="#inputHeight">Height(cm)</label>
+      <input type="number" id="inputHeight">
+      <button id="calculate">Calculate BMI<svg width="13" height="12" viewBox="0 0 13 12" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.1685 6.26205L12.3589 6.26213M12.3589 6.26213L7.64488 1.54808M12.3589 6.26213L7.64488 10.9762"
+            stroke="white" stroke-width="1.20972" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </form>
+  </main>
+
+  <div class="modal disabled">
+    <h1>Your BMI is X</h1>
+    <button id="closeModal"></button>
+  </div>
+
+</body>
+
+</html>
