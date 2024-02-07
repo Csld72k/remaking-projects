@@ -13,8 +13,6 @@ function generateRandomNumber() {
 
 randomNumber = generateRandomNumber()
 
-console.log(randomNumber)
-
 function toggleScreen() {
   gameScreen.classList.toggle("disabled")
   winScreen.classList.toggle("disabled")
@@ -67,10 +65,6 @@ function newGame() {
   buttonTry.disabled = true
   inputNumber.focus()
   setTimeout(() => { buttonTry.disabled = false }, 1)
-}
-
-function eventToPrevent(event) {
-  event.preventDefault()
 }
 
 inputNumber.focus()
