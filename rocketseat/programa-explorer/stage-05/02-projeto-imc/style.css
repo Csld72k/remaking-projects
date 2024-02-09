@@ -19,8 +19,9 @@ li {
   list-style: none;
 }
 
-.disabled {
-  display: none;
+h1, label, button {
+  cursor: default;
+  user-select: none;
 }
 
 body {
@@ -32,8 +33,6 @@ body {
   font-size: 1.6rem;
 
   background-color: #040924;
-  color: #fff;
-  color: #00453A;
 }
 
 body, a, input {
@@ -47,6 +46,17 @@ main {
   padding: 4.8rem 6.4rem 6.4rem;
 
   background-color: #fff;
+  border-radius: .6rem;
+}
+
+h1 {
+  margin-bottom: 3.2rem;
+
+  font-size: 3.2rem;
+  font-weight: bold;
+
+  text-align: center;
+  color: #0C3440;
 }
 
 form {
@@ -54,17 +64,123 @@ form {
   flex-direction: column;
 }
 
-/*#closeModal {
+label {
+  margin-bottom: .8rem;
+
+  font-size: 1.4rem;
+  font-weight: normal;
+
+  color: #00453A;
+}
+
+input {
+  width: 30rem;
+  height: 5.2rem;
+  padding: 1.6rem;
+
+  font-size: 1.6rem;
+  font-weight: normal;
+
+  background-color: #DCE2E9;
+  color: #212529cc;
+  outline: .1rem solid #4950574d;
+  border-radius: .6rem;
+}
+
+input:nth-child(2) {
+  margin-bottom: 1.6rem;
+}
+
+input:nth-child(4) {
+  margin-bottom: 3.2rem;
+}
+
+input:focus {
+  color: #212529;
+  outline: .1rem solid #02799D;
+}
+
+input:focus-visible {
+  outline: .1rem solid #02799D;
+}
+
+input::placeholder {
+  color: #21252966;
+}
+
+#calculate {
+  width: 30rem;
+  height: 5.2rem;
+
+  font-size: 1.6rem;
+  font-weight: bold;
+
+  background-color: #02799D;
+  color: #fff;
+  border-radius: .4rem;
+  transition: .2s;
+  cursor: pointer;
+}
+
+#calculate:hover {
+  font-size: 1.7rem;
+
+  background-color: hsl(200, 97%, 31%);
+  filter: drop-shadow(3px 3px 1px #012935) drop-shadow(-2px -2px 1px rgba(1, 41, 53, 1));
+}
+
+
+#calculate svg {
+  margin-left: .8rem;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #000000b3;
+}
+
+.modal.disabled {
+  display: none;
+}
+
+.container {
+  position: relative;
+
+  padding: 4.8rem 6.4rem;
+
+  background-color: #fff;
+  border-radius: .6rem;
+}
+
+.modal .container h1 {
+  margin: 0;
+}
+
+#closeModal {
+  position: absolute;
+  top: 2.1rem;
+  right: 2.1rem;
+
   width: max-content;
   height: fit-content;
-  background-color: black;
-  display: flex;
+  background-color: #fff;
+  cursor: pointer;
 }
 
-.disabled svg path {
-  fill: red;
+#closeModal:hover svg path {
+  fill-opacity: 1;
+  filter: drop-shadow(0 0 1px #0c3440);
 }
 
-.disabled svg {
-  background-color: red;
-}*/
+#closeModal svg path {
+  transition: .2s;
+}
