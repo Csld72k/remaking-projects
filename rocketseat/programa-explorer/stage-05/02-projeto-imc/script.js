@@ -1,6 +1,7 @@
 let inputWeight = document.querySelector("#inputWeight")
 let inputHeight = document.querySelector("#inputHeight")
 let BMIResultMessage = document.querySelector(".modal h1")
+let modal = document.querySelector(".modal")
 let buttonCalculate = document.querySelector("#calculate")
 let buttonCloseModal = document.querySelector("#closeModal")
 
@@ -19,4 +20,8 @@ function calculateBMI(event) {
     showModalOnOff()
   }
   else showError()
+}
+
+function showModalOnOff() {
+  modal.classList.toggle("disabled")
 }
