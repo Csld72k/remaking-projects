@@ -145,11 +145,15 @@ input::placeholder {
   justify-content: center;
   align-items: center;
 
+  opacity: 1;
+  visibility: visible;
   background-color: #000000b3;
+  transition: .2s;
 }
 
 .modal.disabled {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .container {
