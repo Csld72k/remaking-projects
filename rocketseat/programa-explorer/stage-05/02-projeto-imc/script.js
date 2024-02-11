@@ -7,6 +7,8 @@ let buttonCloseModal = document.querySelector("#closeModal")
 
 buttonCalculate.addEventListener("click", calculateBMI)
 buttonCloseModal.addEventListener("click", showModalOnOff)
+inputWeight.addEventListener("input", disableButtonCalculateIfAnyInputEmpty)
+inputHeight.addEventListener("input", disableButtonCalculateIfAnyInputEmpty)
 
 function checkIfTheInputsAreFilledIn() {
   return (inputWeight.value.length > 0 && inputHeight.value.length > 0)
@@ -24,5 +26,20 @@ function calculateBMI(event) {
 }
 
 function showModalOnOff() {
-  modal.classList.toggle("disabled")
+  modal.classList.toggle("hidden")
+}
+
+function showError() {
+  console.log("Deu ruim")
+  //  console.log("Deu ruim")
+}
+
+function disableButtonCalculateIfAnyInputEmpty() {
+  if (checkIfTheInputsAreFilledIn() && inputWeight.value != 0 && inputHeight.value != 0) {
+    buttonCalculate.disabled = false
+    buttonCalculate.classList.remove("disabled")
+  } else {
+    buttonCalculate.disabled = true
+    buttonCalculate.classList.add("disabled")
+  }
 }

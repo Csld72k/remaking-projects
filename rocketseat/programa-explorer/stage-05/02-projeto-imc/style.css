@@ -125,10 +125,20 @@ input::placeholder {
 #calculate:hover {
   font-size: 1.7rem;
 
-  background-color: hsl(200, 97%, 31%);
+  background-color: #02699c;
   filter: drop-shadow(3px 3px 1px #012935) drop-shadow(-2px -2px 1px rgba(1, 41, 53, 1));
 }
 
+#calculate.disabled {
+  background-color: #b0cae7;
+  cursor: default;
+}
+
+#calculate.disabled:hover {
+  font-size: 1.6rem;
+
+  filter: none;
+}
 
 #calculate svg {
   margin-left: .8rem;
@@ -151,7 +161,7 @@ input::placeholder {
   transition: .2s;
 }
 
-.modal.disabled {
+.modal.hidden {
   opacity: 0;
   visibility: hidden;
 }

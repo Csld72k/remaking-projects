@@ -20,8 +20,8 @@
       <input type="number" id="inputWeight" placeholder="Type the weight" min="0">
       <label for="inputHeight">Height(cm)</label>
       <input type="number" id="inputHeight" placeholder="Type the height" min="0">
-      <button id="calculate">Calculate BMI<svg width="13" height="12" viewBox="0 0 13 12" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
+      <button class="disabled" disabled id="calculate">Calculate BMI<svg width="13" height="12" viewBox="0 0 13 12"
+          fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1.1685 6.26205L12.3589 6.26213M12.3589 6.26213L7.64488 1.54808M12.3589 6.26213L7.64488 10.9762"
             stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
@@ -29,7 +29,7 @@
     </form>
   </main>
 
-  <div class="modal disabled">
+  <div class="modal hidden">
     <div class="container">
       <h1>Your BMI is X</h1>
       <button id="closeModal"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"
