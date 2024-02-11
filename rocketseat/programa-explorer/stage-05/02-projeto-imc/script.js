@@ -22,16 +22,10 @@ function calculateBMI(event) {
     BMIResultMessage.innerText = `Your BMI is ${BMI}`
     showModalOnOff()
   }
-  else showError()
 }
 
 function showModalOnOff() {
   modal.classList.toggle("hidden")
-}
-
-function showError() {
-  console.log("Deu ruim")
-  //  console.log("Deu ruim")
 }
 
 function disableButtonCalculateIfAnyInputEmpty() {
