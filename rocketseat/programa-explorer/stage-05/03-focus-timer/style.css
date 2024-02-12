@@ -132,6 +132,9 @@ main {
   display: none;
 }
 
+
+
+
 input[type=range] {
   -webkit-appearance: none;
   appearance: none;
@@ -163,7 +166,6 @@ input[type=range]::-ms-range-thumb {
 
 input[type=range]::-webkit-slider-thumb {
 
-  all: unset;
   /* limpa os estilos iniciais */
   -webkit-appearance: none;
   /* remove a aparência padrão */
