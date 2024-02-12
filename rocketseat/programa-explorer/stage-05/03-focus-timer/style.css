@@ -31,9 +31,8 @@ body {
   font-size: 1.6rem;
 }
 
-.hidden {
-  opacity: 0;
-  visibility: hidden;
+svg path {
+  fill: var(--icon-color);
 }
 
 body {
@@ -59,12 +58,149 @@ body {
   transform: scale(1.1);
 }
 
-.toggle-light-dark-mode svg path {
-  fill: var(--icon-color);
-}
-
 main {
-  /* width: fit-content; */
   display: flex;
   gap: 19rem;
+}
+
+.timer-container {
+  display: grid;
+  place-content: center;
+  row-gap: 1.6rem;
+
+  text-align: center;
+}
+
+.timer {
+
+  font-size: 12.5rem;
+
+  color: var(--icon-color)
+}
+
+.controls {
+  padding: 2rem 4rem;
+
+  background-color: var(--icon-color);
+  border-radius: 100rem;
+}
+
+.icons-1, .icons-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2.2rem;
+}
+
+.icons-1.hidden, .icons-2.hidden {
+  display: none;
+}
+
+.controls svg {
+  fill: red;
+  background-color: var(--icon-color);
+}
+
+.controls svg path {
+  fill: var(--body-background-color);
+}
+
+.controls button {
+  height: 5.2rem;
+}
+
+.sound-container {
+  width: max(31rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.2rem;
+}
+
+.card {
+  padding: 2.4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.2rem;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--card-color);
+  border-radius: 2.4rem;
+}
+
+.card input[type=checkbox] {
+  display: none;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 9rem;
+  height: 0.4em;
+  border-radius: 5px;
+  background-color: var(--icon-color);
+  outline: none;
+}
+
+/* para o Fire Fox */
+input[type=range]::-moz-range-thumb {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: blue;
+  border: none;
+}
+
+/* para browsers da MS */
+input[type=range]::-ms-range-thumb {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: blue;
+  border: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+
+  all: unset;
+  /* limpa os estilos iniciais */
+  -webkit-appearance: none;
+  /* remove a aparencia padão */
+  border: none;
+
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: blue;
+}
+
+
+
+
+
+.card svg {
+  /* height: 5.6rem; */
+}
+
+.card .forest {}
+
+.card .rain {}
+
+.card .coffee-shop {}
+
+.card .bonfire {}
+
+.card.forest.selected,
+.card.rain.selected,
+.card.coffee-shop.selected,
+.card.bonfire.selected {
+  background: var(--selected-card-color);
+}
+
+.card.forest.selected svg path,
+.card.rain.selected svg path,
+.card.coffee-shop.selected svg path,
+.card.bonfire.selected svg path {
+  fill: var(--body-background-color);
 }
