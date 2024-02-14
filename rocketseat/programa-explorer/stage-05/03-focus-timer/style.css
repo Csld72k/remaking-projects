@@ -92,6 +92,12 @@ main {
   column-gap: 2.2rem;
 }
 
+.controls svg:hover path {
+  /* filter: drop-shadow(1px 1px 1px var(--icon-color)); */
+  filter: drop-shadow(1px 1px 1px var(--body-background-color));
+  /* transform: scale(1.1); */
+}
+
 .icons-1.hidden, .icons-2.hidden {
   display: none;
 }
@@ -128,6 +134,39 @@ main {
   border-radius: 2.4rem;
 }
 
+.card:hover {
+  background-color: var(--icon-color);
+}
+
+.card:hover svg path {
+  fill: var(--body-background-color);
+}
+
+.card:hover>.input-range {
+  background-color: var(--body-background-color);
+}
+
+.card:hover .input-range::-moz-range-thumb {
+  background-color: var(--body-background-color);
+}
+
+.card:hover .input-range::-ms-range-thumb {
+  background-color: var(--body-background-color);
+}
+
+.card:hover .input-range::-webkit-slider-thumb {
+  background-color: var(--body-background-color);
+}
+
+/* .card:hover .input-range,
+.card:hover .input-range::-moz-range-thumb,
+.card:hover .input-range::-ms-range-thumb,
+.card:hover .input-range::-webkit-slider-thumb {
+  background-color: var(--body-background-color);
+  background-color: red;
+  display: none;
+} */
+
 .card input[type=checkbox] {
   display: none;
 }
@@ -135,36 +174,36 @@ main {
 
 
 
-input[type=range] {
+.input-range {
   -webkit-appearance: none;
   appearance: none;
   /* display: inline-block; */
   width: 9rem;
-  height: 0.4em;
-  border-radius: 5px;
+  height: 0.4rem;
+  border-radius: .5rem;
   background-color: var(--icon-color);
   outline: none;
 }
 
 /* para o Fire Fox */
-input[type=range]::-moz-range-thumb {
+.input-range::-moz-range-thumb {
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 50%;
-  background: red;
+  background-color: var(--icon-color);
   border: none;
 }
 
 /* para browsers da MS */
-input[type=range]::-ms-range-thumb {
+.input-range::-ms-range-thumb {
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 50%;
-  background: red;
+  background-color: var(--icon-color);
   border: none;
 }
 
-input[type=range]::-webkit-slider-thumb {
+.input-range::-webkit-slider-thumb {
 
   /* limpa os estilos iniciais */
   -webkit-appearance: none;
@@ -174,8 +213,10 @@ input[type=range]::-webkit-slider-thumb {
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 50%;
-  background: red;
+  background-color: var(--icon-color);
 }
+
+
 
 
 
