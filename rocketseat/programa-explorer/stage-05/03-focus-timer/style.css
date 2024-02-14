@@ -1,19 +1,13 @@
 :root {
   --body-background-color: #fff;
-  /* --selected-icon-color: #fff; */
   --icon-color: #323238;
   --card-color: #E1E1E6;
-  /* --selected-card-color: #02799D; */
   --selected-card-color: #039bc9;
   --controller-button-hover-color: #42D3FF;
 
 
   --body-background-color-dark: #121214;
-  /* --selected-icon-color-dark: #0A3442; */
   --icon-color-dark: #fff;
-  --card-color-dark: #29292E;
-  --selected-card-color-dark: #0A3442;
-  --controller-button-hover-color-dark: #42D3FF;
 
   font-size: 62.5%;
 }
@@ -73,7 +67,7 @@ button {
 }
 
 .toggle-light-dark-mode.dark svg path {
-  fill: var(--body-background-color);
+  fill: var(--icon-color-dark);
 }
 
 .toggle-light-dark-mode:hover {
@@ -82,7 +76,7 @@ button {
 }
 
 .toggle-light-dark-mode.dark:hover {
-  filter: drop-shadow(1px 1px 1px var(--body-background-color));
+  filter: drop-shadow(1px 1px 1px var(--icon-color-dark));
   transform: scale(1.1);
 }
 
@@ -100,7 +94,6 @@ main {
 }
 
 .timer {
-
   font-size: 12.5rem;
 
   color: var(--icon-color)
@@ -129,9 +122,6 @@ main {
 }
 
 .controls svg:hover path, .controls.dark svg:hover path {
-  /* filter: drop-shadow(1px 1px 1px var(--icon-color)); */
-  /* filter: drop-shadow(1px 1px 1px var(--body-background-color)); */
-  /* transform: scale(1.1); */
   fill: var(--controller-button-hover-color);
 }
 
@@ -179,10 +169,6 @@ main {
   transition: .1s;
 }
 
-.card.dark {
-  /* background-color: var(--card-color-dark); */
-}
-
 .card:hover {
   filter: drop-shadow(1px 1px 1px var(--icon-color));
   background-color: var(--icon-color);
@@ -208,26 +194,13 @@ main {
   background-color: var(--body-background-color);
 }
 
-/* .card:hover .input-range,
-.card:hover .input-range::-moz-range-thumb,
-.card:hover .input-range::-ms-range-thumb,
-.card:hover .input-range::-webkit-slider-thumb {
-  background-color: var(--body-background-color);
-  background-color: red;
-  display: none;
-} */
-
 .card input[type=checkbox] {
   display: none;
 }
 
-
-
-
 .input-range {
   -webkit-appearance: none;
   appearance: none;
-  /* display: inline-block; */
   width: 9rem;
   height: 0.4rem;
   border-radius: .5rem;
@@ -236,7 +209,6 @@ main {
   transition: background-color .1s;
 }
 
-/* para o Fire Fox */
 .input-range::-moz-range-thumb {
   width: 1.6rem;
   height: 1.6rem;
@@ -246,7 +218,6 @@ main {
   transition: background-color .1s
 }
 
-/* para browsers da MS */
 .input-range::-ms-range-thumb {
   width: 1.6rem;
   height: 1.6rem;
@@ -258,11 +229,8 @@ main {
 
 .input-range::-webkit-slider-thumb {
 
-  /* limpa os estilos iniciais */
   -webkit-appearance: none;
-  /* remove a aparência padrão */
   border: none;
-
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 50%;
@@ -270,34 +238,10 @@ main {
   transition: background-color .1s
 }
 
-
-
-
-
-
-
-.card svg {
-  /* height: 5.6rem; */
-}
-
-.card .forest {}
-
-.card .rain {}
-
-.card .coffee-shop {}
-
-.card .bonfire {}
-
-.card.selected,
-.card.selected,
-.card.selected,
 .card.selected {
   background-color: var(--selected-card-color);
 }
 
-.card.selected svg path,
-.card.selected svg path,
-.card.selected svg path,
 .card.selected svg path {
   fill: var(--body-background-color);
 }
@@ -321,9 +265,3 @@ main {
 .card.selected:hover {
   filter: drop-shadow(1px 1px 1px var(--icon-color)) brightness(110%);
 }
-
-
-/* .card:hover .input-range,
-.card:hover .input-range::-moz-range-thumb,
-.card:hover .input-range::-ms-range-thumb,
-.card:hover .input-range::-webkit-slider-thumb */
