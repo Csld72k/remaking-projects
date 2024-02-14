@@ -1,11 +1,19 @@
 :root {
   --body-background-color: #fff;
-  --selected-icon-color: #fff;
+  /* --selected-icon-color: #fff; */
   --icon-color: #323238;
   --card-color: #E1E1E6;
   /* --selected-card-color: #02799D; */
   --selected-card-color: #039bc9;
   --controller-button-hover-color: #42D3FF;
+
+
+  --body-background-color-dark: #121214;
+  /* --selected-icon-color-dark: #0A3442; */
+  --icon-color-dark: #fff;
+  --card-color-dark: #29292E;
+  --selected-card-color-dark: #0A3442;
+  --controller-button-hover-color-dark: #42D3FF;
 
   font-size: 62.5%;
 }
@@ -47,6 +55,10 @@ body {
   background-color: var(--body-background-color);
 }
 
+body.dark {
+  background-color: var(--body-background-color-dark);
+}
+
 button {
   cursor: pointer;
 }
@@ -60,8 +72,17 @@ button {
   cursor: pointer;
 }
 
+.toggle-light-dark-mode.dark svg path {
+  fill: var(--body-background-color);
+}
+
 .toggle-light-dark-mode:hover {
   filter: drop-shadow(1px 1px 1px var(--icon-color));
+  transform: scale(1.1);
+}
+
+.toggle-light-dark-mode.dark:hover {
+  filter: drop-shadow(1px 1px 1px var(--body-background-color));
   transform: scale(1.1);
 }
 
@@ -85,11 +106,19 @@ main {
   color: var(--icon-color)
 }
 
+.timer.dark {
+  color: var(--body-background-color);
+}
+
 .controls {
   padding: 2rem 4rem;
 
   background-color: var(--icon-color);
   border-radius: 100rem;
+}
+
+.controls.dark {
+  background-color: var(--body-background-color);
 }
 
 .icons-1, .icons-2 {
@@ -99,7 +128,7 @@ main {
   column-gap: 2.2rem;
 }
 
-.controls svg:hover path {
+.controls svg:hover path, .controls.dark svg:hover path {
   /* filter: drop-shadow(1px 1px 1px var(--icon-color)); */
   /* filter: drop-shadow(1px 1px 1px var(--body-background-color)); */
   /* transform: scale(1.1); */
@@ -111,12 +140,19 @@ main {
 }
 
 .controls svg {
-  fill: red;
   background-color: var(--icon-color);
+}
+
+.controls.dark svg {
+  background-color: var(--body-background-color);
 }
 
 .controls svg path {
   fill: var(--body-background-color);
+}
+
+.controls.dark svg path {
+  fill: var(--icon-color);
 }
 
 .controls button {
@@ -141,6 +177,10 @@ main {
   background-color: var(--card-color);
   border-radius: 2.4rem;
   transition: .1s;
+}
+
+.card.dark {
+  /* background-color: var(--card-color-dark); */
 }
 
 .card:hover {
