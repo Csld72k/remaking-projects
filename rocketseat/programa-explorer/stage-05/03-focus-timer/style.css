@@ -3,7 +3,9 @@
   --selected-icon-color: #fff;
   --icon-color: #323238;
   --card-color: #E1E1E6;
-  --selected-card-color: #02799D;
+  /* --selected-card-color: #02799D; */
+  --selected-card-color: #039bc9;
+  --controller-button-hover-color: #42D3FF;
 
   font-size: 62.5%;
 }
@@ -41,7 +43,12 @@ body {
   display: grid;
   place-content: center;
 
+  user-select: none;
   background-color: var(--body-background-color);
+}
+
+button {
+  cursor: pointer;
 }
 
 .toggle-light-dark-mode {
@@ -94,8 +101,9 @@ main {
 
 .controls svg:hover path {
   /* filter: drop-shadow(1px 1px 1px var(--icon-color)); */
-  filter: drop-shadow(1px 1px 1px var(--body-background-color));
+  /* filter: drop-shadow(1px 1px 1px var(--body-background-color)); */
   /* transform: scale(1.1); */
+  fill: var(--controller-button-hover-color);
 }
 
 .icons-1.hidden, .icons-2.hidden {
@@ -132,9 +140,11 @@ main {
 
   background-color: var(--card-color);
   border-radius: 2.4rem;
+  transition: .1s;
 }
 
 .card:hover {
+  filter: drop-shadow(1px 1px 1px var(--icon-color));
   background-color: var(--icon-color);
 }
 
@@ -183,6 +193,7 @@ main {
   border-radius: .5rem;
   background-color: var(--icon-color);
   outline: none;
+  transition: background-color .1s;
 }
 
 /* para o Fire Fox */
@@ -192,6 +203,7 @@ main {
   border-radius: 50%;
   background-color: var(--icon-color);
   border: none;
+  transition: background-color .1s
 }
 
 /* para browsers da MS */
@@ -201,6 +213,7 @@ main {
   border-radius: 50%;
   background-color: var(--icon-color);
   border: none;
+  transition: background-color .1s
 }
 
 .input-range::-webkit-slider-thumb {
@@ -214,6 +227,7 @@ main {
   height: 1.6rem;
   border-radius: 50%;
   background-color: var(--icon-color);
+  transition: background-color .1s
 }
 
 
@@ -234,16 +248,42 @@ main {
 
 .card .bonfire {}
 
-.card.forest.selected,
-.card.rain.selected,
-.card.coffee-shop.selected,
-.card.bonfire.selected {
-  background: var(--selected-card-color);
+.card.selected,
+.card.selected,
+.card.selected,
+.card.selected {
+  background-color: var(--selected-card-color);
 }
 
-.card.forest.selected svg path,
-.card.rain.selected svg path,
-.card.coffee-shop.selected svg path,
-.card.bonfire.selected svg path {
+.card.selected svg path,
+.card.selected svg path,
+.card.selected svg path,
+.card.selected svg path {
   fill: var(--body-background-color);
 }
+
+.card.selected .input-range {
+  background-color: var(--body-background-color);
+}
+
+.card.selected .input-range::-moz-range-thumb {
+  background-color: var(--body-background-color);
+}
+
+.card.selected .input-range::-ms-range-thumb {
+  background-color: var(--body-background-color);
+}
+
+.card.selected .input-range::-webkit-slider-thumb {
+  background-color: var(--body-background-color);
+}
+
+.card.selected:hover {
+  filter: drop-shadow(1px 1px 1px var(--icon-color)) brightness(110%);
+}
+
+
+/* .card:hover .input-range,
+.card:hover .input-range::-moz-range-thumb,
+.card:hover .input-range::-ms-range-thumb,
+.card:hover .input-range::-webkit-slider-thumb */
