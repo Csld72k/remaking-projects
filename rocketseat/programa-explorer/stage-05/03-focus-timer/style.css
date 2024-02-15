@@ -1,30 +1,20 @@
 :root {
   --body-background-color: #121214;
-  --card-color: #29292E;
+  --primary-color: #fff;
+  --secondary-color: #29292E;
   --selected-card-color: #039bc9;
-  --selected-card-icon-color: #fff;
   --controller-button-hover-color: #42D3FF;
-  --timer-text-color: #fff;
-  --card-hover-color: #fff;
-  --white: #fff;
-  --control-icon-color: #323238;
-
 
   font-size: 62.5%;
 }
 
-html {
-  transition: 1s;
-}
 
 html.light {
-  --card-color: #E1E1E6;
   --body-background-color: #fff;
+  --primary-color: #29292E;
+  --secondary-color: #E1E1E6;
   --selected-card-color: #039bc9;
   --controller-button-hover-color: #42D3FF;
-  --timer-text-color: #323238;
-  --control-icon-color: #fff;
-  --card-hover-color: #323238;
 }
 
 * {
@@ -34,6 +24,8 @@ html.light {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  transition: background-color 1s;
 }
 
 a {
@@ -51,7 +43,7 @@ body {
 }
 
 svg path {
-  fill: var(--card-hover-color);
+  fill: var(--primary-color);
 }
 
 body {
@@ -62,6 +54,7 @@ body {
 
   user-select: none;
   background-color: var(--body-background-color);
+  transition: background-color 1s;
 }
 
 button {
@@ -77,18 +70,13 @@ button {
   cursor: pointer;
 }
 
-/* .toggle-light-dark-mode svg path {
-  fill: var(--selected-card-icon-color);
-} */
-
 .toggle-light-dark-mode i {
   font-size: 3.2rem;
-  color: var(--timer-text-color);
+  color: var(--primary-color);
 }
 
 .toggle-light-dark-mode:hover {
-  /* filter: drop-shadow(1px 1px 1px var(--card-hover-color-dark)); */
-  filter: drop-shadow(0 0 2rem var(--timer-text-color));
+  filter: drop-shadow(0 0 1.5rem var(--primary-color));
   transform: scale(1.1);
 }
 
@@ -110,13 +98,13 @@ main {
 
   font-size: 12.5rem;
 
-  color: var(--timer-text-color)
+  color: var(--primary-color)
 }
 
 .controls {
   padding: 2rem 4rem;
 
-  background-color: var(--timer-text-color);
+  background-color: var(--secondary-color);
   border-radius: 100rem;
 }
 
@@ -136,11 +124,11 @@ main {
 }
 
 .controls svg {
-  background-color: var(--timer-text-color);
+  background-color: var(--secondary-color);
 }
 
 .controls svg path {
-  fill: var(--control-icon-color);
+  fill: var(--primary-color);
 }
 
 .controls button {
@@ -162,34 +150,34 @@ main {
   justify-content: center;
   align-items: center;
 
-  background-color: var(--card-color);
+  background-color: var(--secondary-color);
   border-radius: 2.4rem;
   transition: .1s;
 }
 
 .card:hover {
-  filter: drop-shadow(1px 1px 1px var(--card-hover-color));
-  background-color: var(--card-hover-color);
+  filter: drop-shadow(1px 1px 1px var(--primary-color));
+  background-color: var(--primary-color);
 }
 
 .card:hover svg path {
-  fill: var(--body-background-color);
+  fill: var(--secondary-color);
 }
 
 .card:hover .input-range {
-  background-color: var(--body-background-color);
+  background-color: var(--secondary-color);
 }
 
 .card:hover .input-range::-moz-range-thumb {
-  background-color: var(--body-background-color);
+  background-color: var(--secondary-color);
 }
 
 .card:hover .input-range::-ms-range-thumb {
-  background-color: var(--body-background-color);
+  background-color: var(--secondary-color);
 }
 
 .card:hover .input-range::-webkit-slider-thumb {
-  background-color: var(--body-background-color);
+  background-color: var(--secondary-color);
 }
 
 .card.selected {
@@ -197,27 +185,27 @@ main {
 }
 
 .card.selected svg path {
-  fill: var(--selected-card-icon-color);
+  fill: var(--secondary-color);
 }
 
 .card.selected .input-range {
-  background-color: var(--selected-card-icon-color);
+  background-color: var(--secondary-color);
 }
 
 .card.selected .input-range::-moz-range-thumb {
-  background-color: var(--selected-card-icon-color);
+  background-color: var(--secondary-color);
 }
 
 .card.selected .input-range::-ms-range-thumb {
-  background-color: var(--selected-card-icon-color);
+  background-color: var(--secondary-color);
 }
 
 .card.selected .input-range::-webkit-slider-thumb {
-  background-color: var(--selected-card-icon-color);
+  background-color: var(--secondary-color);
 }
 
 .card.selected:hover {
-  filter: drop-shadow(1px 1px 1px var(--card-hover-color)) brightness(110%);
+  filter: drop-shadow(1px 1px 1px var(--secondary-color)) brightness(110%);
 }
 
 .card input[type=checkbox] {
@@ -230,8 +218,9 @@ main {
   width: 9rem;
   height: 0.4rem;
   border-radius: .5rem;
-  background-color: var(--card-hover-color);
+  background-color: var(--primary-color);
   outline: none;
+  cursor: pointer;
   transition: background-color .1s;
 }
 
@@ -239,7 +228,7 @@ main {
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 50%;
-  background-color: var(--card-hover-color);
+  background-color: var(--primary-color);
   border: none;
   transition: background-color .1s
 }
@@ -248,7 +237,7 @@ main {
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 50%;
-  background-color: var(--card-hover-color);
+  background-color: var(--primary-color);
   border: none;
   transition: background-color .1s
 }
@@ -260,6 +249,6 @@ main {
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 50%;
-  background-color: var(--card-hover-color);
+  background-color: var(--primary-color);
   transition: background-color .1s
 }
