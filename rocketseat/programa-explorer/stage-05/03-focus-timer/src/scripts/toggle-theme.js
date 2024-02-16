@@ -4,7 +4,9 @@ let html = document.documentElement
 let buttonToggleTheme = document.querySelector(".toggle-light-dark-mode")
 let icon = buttonToggleTheme.querySelector("i")
 
-buttonToggleTheme.addEventListener("click", () => {
+buttonToggleTheme.addEventListener("click", toggleTheme)
+
+function toggleTheme() {
   html.classList.toggle("light")
   html.classList.contains("light") ? icon.classList = lightModeClass : icon.classList = darkModeClass
-})
+}
