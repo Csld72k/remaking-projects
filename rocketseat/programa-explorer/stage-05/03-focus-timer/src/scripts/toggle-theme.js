@@ -1,6 +1,8 @@
-buttonToggleTheme.addEventListener("click", toggleTheme)
+import { Elements } from "./elements.js"
 
-function toggleTheme() {
+const { html, icon, lightModeClass, darkModeClass } = Elements
+
+export function ToggleTheme() {
   html.classList.toggle("light")
   html.classList.contains("light") ? icon.classList = lightModeClass : icon.classList = darkModeClass
 }
