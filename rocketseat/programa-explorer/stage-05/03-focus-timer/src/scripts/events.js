@@ -1,8 +1,10 @@
-import { Elements } from "./elements.js";
-import { ToggleTheme } from "./toggle-theme.js"
+import { Elements } from "./elements.js"
 
-const { buttonToggleTheme } = Elements
+const { lightModeClass, darkModeClass, html, buttonToggleTheme, icon, buttonPlay } = Elements
 
-export function Events() {
-  buttonToggleTheme.addEventListener("click", ToggleTheme)
+export function Events({ toggleTheme, timerControls }) {
+
+  buttonToggleTheme.addEventListener("click", toggleTheme)
+
+  buttonPlay.addEventListener("click", timerControls.play)
 }
