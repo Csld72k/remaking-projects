@@ -10,7 +10,9 @@ const {
   html,
   buttonToggleTheme,
   icon,
-  buttonPlay
+  buttonPlay,
+  inputMinutes,
+  inputSeconds
 } = Elements
 
 const toggleTheme = ToggleTheme({
@@ -20,7 +22,7 @@ const toggleTheme = ToggleTheme({
   darkModeClass
 })
 
-const utils = Utils({})
+const utils = Utils({ inputMinutes, inputSeconds })
 
 const timerControls = TimerControls({ buttonPlay })
 
