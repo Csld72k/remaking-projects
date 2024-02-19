@@ -1,6 +1,6 @@
-export function TimerControls({ buttonPlay }) {
-  function play() {
-    console.log('pay')
+export function TimerControls({ }) {
+  function play(utils) {
+    utils.countdown()
   }
 
   return { play }

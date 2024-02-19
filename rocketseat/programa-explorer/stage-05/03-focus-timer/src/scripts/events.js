@@ -2,9 +2,9 @@ import { Elements } from "./elements.js"
 
 const { lightModeClass, darkModeClass, html, buttonToggleTheme, icon, buttonPlay } = Elements
 
-export function Events({ toggleTheme, timerControls }) {
+export function Events({ toggleTheme, timerControls, utils }) {
 
   buttonToggleTheme.addEventListener("click", toggleTheme)
 
-  buttonPlay.addEventListener("click", timerControls.play)
+  buttonPlay.addEventListener("click", () => { timerControls.play(utils) })
 }
