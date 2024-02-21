@@ -8,7 +8,6 @@ const {
   lightModeClass,
   darkModeClass,
   html,
-  buttonToggleTheme,
   icon,
   buttonPlay,
   inputMinutes,

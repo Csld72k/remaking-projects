@@ -1,4 +1,9 @@
+import { Elements } from "./elements.js"
+
 export function Utils({ inputMinutes, inputSeconds }) {
+
+  const { buttonPlay } = Elements
+
   let minutes = Number(inputMinutes.textContent)
   let seconds = Number(inputSeconds.textContent)
   let timer
@@ -9,16 +14,17 @@ export function Utils({ inputMinutes, inputSeconds }) {
       minutes = Number(inputMinutes.textContent)
       seconds = Number(inputSeconds.textContent)
 
-      console.log(minutes)
-      console.log(seconds)
-      console.log(timer)
+      // console.log(minutes)
+      // console.log(seconds)
+      // console.log(timer)
 
       if (seconds === 0) {
         if (minutes === 0) {
           clearInterval(timer)
+          enableButton(buttonPlay)
         } else {
           minutes--
-          seconds = 59
+          seconds = 5
         }
 
       } else {
@@ -29,7 +35,7 @@ export function Utils({ inputMinutes, inputSeconds }) {
 
     }, 500)
 
-    timer
+
   }
 
   function updateTime(minutes, seconds) {
@@ -37,5 +43,13 @@ export function Utils({ inputMinutes, inputSeconds }) {
     inputSeconds.innerText = String(seconds).padStart(2, "0")
   }
 
-  return { countdown }
+  function disableButton(button) {
+    button.disabled = true
+  }
+
+  function enableButton(button) {
+    button.disabled = false
+  }
+
+  return { countdown, updateTime, disableButton, enableButton }
 }

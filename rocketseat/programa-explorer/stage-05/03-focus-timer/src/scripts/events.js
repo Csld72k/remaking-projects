@@ -1,6 +1,6 @@
 import { Elements } from "./elements.js"
 
-const { lightModeClass, darkModeClass, html, buttonToggleTheme, icon, buttonPlay } = Elements
+const { buttonToggleTheme, buttonPlay } = Elements
 
 export function Events({ toggleTheme, timerControls, utils }) {
 
