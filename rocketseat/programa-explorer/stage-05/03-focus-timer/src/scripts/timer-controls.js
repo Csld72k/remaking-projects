@@ -29,5 +29,9 @@ export function TimerControls(utils) {
     utils.disableButton(buttonPlay)
     utils.updateTime("00", "00")
   }
-  return { play, pause, plus, minus, stop }
+
+  function setTime() {
+  }
+
+  return { play, pause, plus, minus, stop, setTime }
 }
