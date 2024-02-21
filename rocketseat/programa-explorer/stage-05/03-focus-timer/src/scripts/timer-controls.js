@@ -1,6 +1,6 @@
 import { Elements } from "./elements.js"
 
-const { buttonPlay } = Elements
+const { buttonPlay, inputMinutes, inputSeconds } = Elements
 
 export function TimerControls(utils) {
 
@@ -16,5 +16,8 @@ export function TimerControls(utils) {
     utils.enableButton(buttonPlay)
   }
 
-  return { play, pause }
+  function plus() {
+    utils.updateTime((Number(inputMinutes.textContent) + 1), (Number(inputSeconds.textContent)))
+  }
+  return { play, pause, plus }
 }
