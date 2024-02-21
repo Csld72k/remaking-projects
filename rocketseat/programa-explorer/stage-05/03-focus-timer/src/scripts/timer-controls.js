@@ -23,5 +23,11 @@ export function TimerControls(utils) {
   function minus() {
     utils.updateTime((Number(--inputMinutes.textContent)), (Number(inputSeconds.textContent)))
   }
-  return { play, pause, plus, minus }
+
+  function stop() {
+    utils.pauseTimer()
+    utils.disableButton(buttonPlay)
+    utils.updateTime("00", "00")
+  }
+  return { play, pause, plus, minus, stop }
 }
