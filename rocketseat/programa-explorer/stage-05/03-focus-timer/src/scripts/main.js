@@ -19,7 +19,8 @@ const {
   inputMinutes,
   inputSeconds,
   timerControls1,
-  timerControls2
+  timerControls2,
+  modalSetTime
 } = Elements
 
 const toggleTheme = ToggleTheme(
@@ -29,8 +30,8 @@ const toggleTheme = ToggleTheme(
   darkModeClass
 )
 
-const utils = Utils(inputMinutes, inputSeconds, timerControls1, timerControls2)
+const utils = Utils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus)
 
-const timerControls = TimerControls(utils, buttonPlay, buttonPause)
+const timerControls = TimerControls(utils, buttonPlay, inputMinutes, inputSeconds, buttonMinus, modalSetTime)
 
 Events({ toggleTheme, timerControls, utils })

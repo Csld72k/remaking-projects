@@ -1,8 +1,6 @@
 import { Elements } from "./elements.js"
 
-export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2) {
-
-  const { buttonPlay } = Elements
+export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus) {
 
   let minutes
   let seconds
@@ -18,6 +16,10 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
       // console.log(minutes)
       // console.log(seconds)
       // console.log(timer)
+
+      console.log(buttonMinus)
+
+      if (minutes <= 0) disableButton(buttonMinus)
 
       if (seconds === 0) {
         if (minutes === 0) {
@@ -61,6 +63,10 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
 
   function pauseTimer() {
     clearInterval(timer)
+  }
+
+  function openModalSetTime() {
+
   }
 
   return { countdown, updateTime, disableButton, enableButton, toggleControls, pauseTimer }

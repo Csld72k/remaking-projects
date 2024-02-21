@@ -268,7 +268,7 @@ main {
   transition: background-color .1s
 }
 
-.modal-chose-time {
+.modal-set-time {
   position: fixed;
   top: 0;
   left: 0;
@@ -283,7 +283,7 @@ main {
   transition: .5s;
 }
 
-.modal-chose-time .wrapper {
+.modal-set-time .wrapper {
   padding: 4rem;
 
   font-size: 4rem;
@@ -293,22 +293,22 @@ main {
   border-radius: 1rem;
 }
 
-.modal-chose-time .label-container {
+.modal-set-time .label-container {
   display: flex;
   gap: 4rem;
 }
 
-.modal-chose-time .input-container {
+.modal-set-time .input-container {
   margin-top: .5rem;
   display: flex;
   gap: 1.5rem;
 }
 
-.modal-chose-time label {
+.modal-set-time label {
   font-size: 1.6rem;
 }
 
-.modal-chose-time input {
+.modal-set-time input {
   width: 8rem;
   height: 5rem;
   text-align: center;
@@ -320,24 +320,24 @@ main {
   border-radius: .5rem;
 }
 
-.modal-chose-time input::-webkit-inner-spin-button,
-.modal-chose-time input::-webkit-outer-spin-button {
+.modal-set-time input::-webkit-inner-spin-button,
+.modal-set-time input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   appearance: none;
 }
 
-.modal-chose-time input::placeholder {
+.modal-set-time input::placeholder {
   font-size: 1.7rem;
   text-align: center;
   align-items: center;
 }
 
-.modal-chose-time i {
+.modal-set-time i {
   margin-left: .5rem;
   cursor: pointer;
 }
 
-.modal-chose-time.disabled {
+.modal-set-time.disabled {
   visibility: hidden;
   opacity: 0;
 }

@@ -1,8 +1,8 @@
-import { Elements } from "./elements.js"
+// import { Elements } from "./elements.js"
 
-const { buttonPlay, inputMinutes, inputSeconds } = Elements
+// const { buttonPlay, inputMinutes, inputSeconds, modalSetTime } = Elements
 
-export function TimerControls(utils) {
+export function TimerControls(utils, buttonPlay, inputMinutes, inputSeconds, buttonMinus, modalSetTime) {
 
   function play() {
     utils.disableButton(buttonPlay)
@@ -17,7 +17,8 @@ export function TimerControls(utils) {
   }
 
   function plus() {
-    utils.updateTime((Number(inputMinutes.textContent) + 1), (Number(inputSeconds.textContent)))
+    if (inputMinutes.textContent > 0) utils.updateTime((Number(++inputMinutes.textContent)), (Number(inputSeconds.textContent)))
+
   }
 
   function minus() {
@@ -31,6 +32,7 @@ export function TimerControls(utils) {
   }
 
   function setTime() {
+
   }
 
   return { play, pause, plus, minus, stop, setTime }

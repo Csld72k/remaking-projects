@@ -2,7 +2,7 @@ import { Elements } from "./elements.js"
 
 const { buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonSetTime } = Elements
 
-export function Events({ toggleTheme, timerControls, utils }) {
+export function Events({ toggleTheme, timerControls }) {
 
   buttonToggleTheme.addEventListener("click", toggleTheme)
 

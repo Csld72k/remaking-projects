@@ -13,6 +13,7 @@ const inputMinutes = document.querySelector(".minutes")
 const inputSeconds = document.querySelector(".seconds")
 const timerControls1 = document.querySelector(".icons-1")
 const timerControls2 = document.querySelector(".icons-2")
+const modalSetTime = document.querySelector(".modal-set-time")
 
 export const Elements = {
   lightModeClass,
@@ -29,5 +30,6 @@ export const Elements = {
   inputMinutes,
   inputSeconds,
   timerControls1,
-  timerControls2
+  timerControls2,
+  modalSetTime
 }
