@@ -6,6 +6,8 @@ const icon = buttonToggleTheme.querySelector("i")
 const buttonPlay = document.querySelector(".button-play")
 const inputMinutes = document.querySelector(".minutes")
 const inputSeconds = document.querySelector(".seconds")
+const timerControls1 = document.querySelector(".icons-1")
+const timerControls2 = document.querySelector(".icons-2")
 
 export const Elements = {
   lightModeClass,
@@ -15,5 +17,7 @@ export const Elements = {
   icon,
   buttonPlay,
   inputMinutes,
-  inputSeconds
+  inputSeconds,
+  timerControls1,
+  timerControls2
 }

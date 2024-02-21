@@ -1,6 +1,6 @@
 import { Elements } from "./elements.js"
 
-export function Utils({ inputMinutes, inputSeconds }) {
+export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2) {
 
   const { buttonPlay } = Elements
 
@@ -24,7 +24,7 @@ export function Utils({ inputMinutes, inputSeconds }) {
           enableButton(buttonPlay)
         } else {
           minutes--
-          seconds = 5
+          seconds = 59
         }
 
       } else {
@@ -51,5 +51,10 @@ export function Utils({ inputMinutes, inputSeconds }) {
     button.disabled = false
   }
 
-  return { countdown, updateTime, disableButton, enableButton }
+  function toggleControls() {
+    timerControls1.classList.toggle("hidden")
+    timerControls2.classList.toggle("hidden")
+  }
+
+  return { countdown, updateTime, disableButton, enableButton, toggleControls }
 }
