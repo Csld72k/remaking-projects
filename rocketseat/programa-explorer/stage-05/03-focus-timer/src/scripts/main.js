@@ -11,6 +11,11 @@ const {
   buttonToggleTheme,
   icon,
   buttonPlay,
+  buttonStop,
+  buttonSetTime,
+  buttonPause,
+  buttonPlus,
+  buttonMinus,
   inputMinutes,
   inputSeconds,
   timerControls1,
@@ -26,6 +31,6 @@ const toggleTheme = ToggleTheme(
 
 const utils = Utils(inputMinutes, inputSeconds, timerControls1, timerControls2)
 
-const timerControls = TimerControls(utils, buttonPlay)
+const timerControls = TimerControls(utils, buttonPlay, buttonPause)
 
 Events({ toggleTheme, timerControls, utils })

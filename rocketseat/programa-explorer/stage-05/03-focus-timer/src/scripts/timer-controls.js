@@ -10,6 +10,11 @@ export function TimerControls(utils) {
     utils.toggleControls()
   }
 
+  function pause() {
+    utils.pauseTimer()
+    utils.toggleControls()
+    utils.enableButton(buttonPlay)
+  }
 
-  return { play }
+  return { play, pause }
 }

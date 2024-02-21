@@ -4,9 +4,10 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
 
   const { buttonPlay } = Elements
 
-  let minutes = Number(inputMinutes.textContent)
-  let seconds = Number(inputSeconds.textContent)
+  let minutes
+  let seconds
   let timer
+
   function countdown() {
 
     timer = setInterval(() => {
@@ -22,6 +23,7 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
         if (minutes === 0) {
           clearInterval(timer)
           enableButton(buttonPlay)
+          toggleControls()
         } else {
           minutes--
           seconds = 59
@@ -37,6 +39,8 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
 
 
   }
+
+
 
   function updateTime(minutes, seconds) {
     inputMinutes.innerText = String(minutes).padStart(2, "0")
@@ -56,5 +60,9 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
     timerControls2.classList.toggle("hidden")
   }
 
-  return { countdown, updateTime, disableButton, enableButton, toggleControls }
+  function pauseTimer() {
+    clearInterval(timer)
+  }
+
+  return { countdown, updateTime, disableButton, enableButton, toggleControls, pauseTimer }
 }
