@@ -19,5 +19,9 @@ export function TimerControls(utils) {
   function plus() {
     utils.updateTime((Number(inputMinutes.textContent) + 1), (Number(inputSeconds.textContent)))
   }
-  return { play, pause, plus }
+
+  function minus() {
+    utils.updateTime((Number(--inputMinutes.textContent)), (Number(inputSeconds.textContent)))
+  }
+  return { play, pause, plus, minus }
 }
