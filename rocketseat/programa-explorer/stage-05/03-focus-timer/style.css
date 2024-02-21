@@ -131,6 +131,19 @@ main {
   fill: var(--primary-color);
 }
 
+.controls button[disabled] {
+  cursor: default;
+}
+
+.controls button[disabled] svg path {
+  filter: brightness(20%);
+  cursor: default;
+}
+
+.controls button[disabled] svg:hover path {
+  fill: var(--primary-color);
+}
+
 .controls button {
   height: 5.2rem;
 }

@@ -22,7 +22,6 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
       if (seconds === 0) {
         if (minutes === 0) {
           clearInterval(timer)
-          enableButton(buttonPlay)
           toggleControls()
         } else {
           minutes--
