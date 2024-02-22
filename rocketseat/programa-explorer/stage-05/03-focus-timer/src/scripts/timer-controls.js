@@ -33,7 +33,7 @@ export function TimerControls(utils, buttonPlay, inputMinutes, inputSeconds, mod
   }
 
   function setTime() {
-
+    utils.openModalSetTime()
   }
 
   return { play, pause, plus, minus, stop, setTime }

@@ -1,6 +1,6 @@
 import { Elements } from "./elements.js"
 
-export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus) {
+export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus, modalSetTime) {
 
   let minutes
   let seconds
@@ -73,8 +73,8 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
   }
 
   function openModalSetTime() {
-
+    modalSetTime.classList.remove("disabled")
   }
 
-  return { countdown, updateTime, disableButton, enableButton, toggleControls, pauseTimer, toggleButtonMinusDisabledEnabled, incrementMinutes, decrementMinutes }
+  return { countdown, updateTime, disableButton, enableButton, toggleControls, pauseTimer, toggleButtonMinusDisabledEnabled, incrementMinutes, decrementMinutes, openModalSetTime }
 }

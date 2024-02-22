@@ -30,7 +30,7 @@ const toggleTheme = ToggleTheme(
   darkModeClass
 )
 
-const utils = Utils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus)
+const utils = Utils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus, modalSetTime)
 
 const timerControls = TimerControls(utils, buttonPlay, inputMinutes, inputSeconds, buttonMinus, modalSetTime)
 
