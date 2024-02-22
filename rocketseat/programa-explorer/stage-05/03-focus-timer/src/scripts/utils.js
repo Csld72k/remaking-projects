@@ -82,6 +82,9 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
   }
 
   function setTime() {
+    if (modalInputMinutes.value == undefined) modalInputMinutes.value = 0
+    if (modalInputSeconds.value == undefined) modalInputSeconds.value = 0
+
     inputMinutes.innerText = String(modalInputMinutes.value).padStart(2, "0")
     inputSeconds.innerText = String(modalInputSeconds.value).padStart(2, "0")
 

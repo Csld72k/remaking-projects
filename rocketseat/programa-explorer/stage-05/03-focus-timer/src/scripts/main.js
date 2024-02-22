@@ -35,6 +35,6 @@ const toggleTheme = ToggleTheme(
 
 const utils = Utils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus, modalSetTime, modalInputMinutes, modalInputSeconds, buttonPlay)
 
-const timerControls = TimerControls(utils, buttonPlay, inputMinutes, inputSeconds, buttonMinus, modalSetTime)
+const timerControls = TimerControls(utils, buttonPlay, inputMinutes, inputSeconds, buttonMinus, modalSetTime, modalInputMinutes, modalInputSeconds)
 
 Events(toggleTheme, timerControls, buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonChangeTime, buttonSetTime)
