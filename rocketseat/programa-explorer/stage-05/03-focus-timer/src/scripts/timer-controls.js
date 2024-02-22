@@ -2,7 +2,7 @@
 
 // const { buttonPlay, inputMinutes, inputSeconds, modalSetTime } = Elements
 
-export function TimerControls(utils, buttonPlay, inputMinutes, inputSeconds, buttonMinus, modalSetTime) {
+export function TimerControls(utils, buttonPlay, inputMinutes, inputSeconds, modalSetTime) {
 
   function play() {
     utils.disableButton(buttonPlay)
@@ -17,12 +17,13 @@ export function TimerControls(utils, buttonPlay, inputMinutes, inputSeconds, but
   }
 
   function plus() {
-    if (inputMinutes.textContent > 0) utils.updateTime((Number(++inputMinutes.textContent)), (Number(inputSeconds.textContent)))
-
+    utils.incrementMinutes()
+    utils.toggleButtonMinusDisabledEnabled()
   }
 
   function minus() {
-    utils.updateTime((Number(--inputMinutes.textContent)), (Number(inputSeconds.textContent)))
+    utils.decrementMinutes()
+    utils.toggleButtonMinusDisabledEnabled()
   }
 
   function stop() {

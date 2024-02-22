@@ -34,4 +34,4 @@ const utils = Utils(inputMinutes, inputSeconds, timerControls1, timerControls2, 
 
 const timerControls = TimerControls(utils, buttonPlay, inputMinutes, inputSeconds, buttonMinus, modalSetTime)
 
-Events({ toggleTheme, timerControls, utils })
+Events(toggleTheme, timerControls, buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonSetTime)

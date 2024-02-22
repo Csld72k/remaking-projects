@@ -13,20 +13,12 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
       minutes = Number(inputMinutes.textContent)
       seconds = Number(inputSeconds.textContent)
 
-      // console.log(minutes)
-      // console.log(seconds)
-      // console.log(timer)
-
-      console.log(buttonMinus)
-
-      if (minutes <= 0) disableButton(buttonMinus)
-
       if (seconds === 0) {
         if (minutes === 0) {
           clearInterval(timer)
           toggleControls()
         } else {
-          minutes--
+          --minutes
           seconds = 59
         }
 
@@ -36,12 +28,12 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
 
       updateTime(minutes, seconds)
 
+      if (minutes == 0) toggleButtonMinusDisabledEnabled()
+
     }, 500)
 
 
   }
-
-
 
   function updateTime(minutes, seconds) {
     inputMinutes.innerText = String(minutes).padStart(2, "0")
@@ -65,9 +57,24 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
     clearInterval(timer)
   }
 
+  function incrementMinutes() {
+    updateTime((Number(inputMinutes.textContent) + 1), (Number(inputSeconds.textContent)))
+  }
+
+  function decrementMinutes() {
+    if (inputMinutes.textContent > 0) updateTime((Number(inputMinutes.textContent) - 1), (Number(inputSeconds.textContent)))
+  }
+
+  function toggleButtonMinusDisabledEnabled() {
+    let minutes = Number(inputMinutes.textContent)
+    let seconds = Number(inputSeconds.textContent)
+    if (minutes < 1 && buttonMinus.disabled == false) disableButton(buttonMinus)
+    else if (minutes > 0 && buttonMinus.disabled == true) enableButton(buttonMinus)
+  }
+
   function openModalSetTime() {
 
   }
 
-  return { countdown, updateTime, disableButton, enableButton, toggleControls, pauseTimer }
+  return { countdown, updateTime, disableButton, enableButton, toggleControls, pauseTimer, toggleButtonMinusDisabledEnabled, incrementMinutes, decrementMinutes }
 }
