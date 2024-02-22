@@ -5,7 +5,7 @@ const buttonToggleTheme = document.querySelector(".toggle-light-dark-mode")
 const icon = buttonToggleTheme.querySelector("i")
 const buttonPlay = document.querySelector(".button-play")
 const buttonStop = document.querySelector(".button-stop")
-const buttonSetTime = document.querySelector(".button-timer")
+const buttonChangeTime = document.querySelector(".button-timer")
 const buttonPause = document.querySelector(".button-pause")
 const buttonPlus = document.querySelector(".button-plus")
 const buttonMinus = document.querySelector(".button-minus")
@@ -14,6 +14,9 @@ const inputSeconds = document.querySelector(".seconds")
 const timerControls1 = document.querySelector(".icons-1")
 const timerControls2 = document.querySelector(".icons-2")
 const modalSetTime = document.querySelector(".modal-set-time")
+const buttonSetTime = document.querySelector(".input-container > i")
+const modalInputMinutes = document.querySelector("#minutes-to-set")
+const modalInputSeconds = document.querySelector("#seconds-to-set")
 
 export const Elements = {
   lightModeClass,
@@ -23,7 +26,7 @@ export const Elements = {
   icon,
   buttonPlay,
   buttonStop,
-  buttonSetTime,
+  buttonChangeTime,
   buttonPause,
   buttonPlus,
   buttonMinus,
@@ -31,5 +34,8 @@ export const Elements = {
   inputSeconds,
   timerControls1,
   timerControls2,
-  modalSetTime
+  modalSetTime,
+  buttonSetTime,
+  modalInputMinutes,
+  modalInputSeconds
 }

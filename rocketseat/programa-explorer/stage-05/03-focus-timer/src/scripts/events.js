@@ -1,8 +1,8 @@
 // import { Elements } from "./elements.js"
 
-// const { buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonSetTime } = Elements
+// const { buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonChangeTime } = Elements
 
-export function Events(toggleTheme, timerControls, buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonSetTime) {
+export function Events(toggleTheme, timerControls, buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonChangeTime, buttonSetTime) {
 
   buttonToggleTheme.addEventListener("click", toggleTheme)
 
@@ -16,5 +16,7 @@ export function Events(toggleTheme, timerControls, buttonToggleTheme, buttonPlay
 
   buttonStop.addEventListener("click", timerControls.stop)
 
-  buttonSetTime.addEventListener("click", timerControls.setTime)
+  buttonChangeTime.addEventListener("click", timerControls.handleModalSetTime)
+
+  buttonSetTime.addEventListener("click", timerControls.setNewTime)
 }

@@ -1,6 +1,6 @@
 import { Elements } from "./elements.js"
 
-export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus, modalSetTime) {
+export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus, modalSetTime, modalInputMinutes, modalInputSeconds, buttonPlay) {
 
   let minutes
   let seconds
@@ -67,14 +67,26 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
 
   function toggleButtonMinusDisabledEnabled() {
     let minutes = Number(inputMinutes.textContent)
-    let seconds = Number(inputSeconds.textContent)
+    // let seconds = Number(inputSeconds.textContent)
     if (minutes < 1 && buttonMinus.disabled == false) disableButton(buttonMinus)
     else if (minutes > 0 && buttonMinus.disabled == true) enableButton(buttonMinus)
   }
 
-  function openModalSetTime() {
-    modalSetTime.classList.remove("disabled")
+  function toggleOnOffModalSetTime() {
+    modalSetTime.classList.toggle("disabled")
   }
 
-  return { countdown, updateTime, disableButton, enableButton, toggleControls, pauseTimer, toggleButtonMinusDisabledEnabled, incrementMinutes, decrementMinutes, openModalSetTime }
+  function resetModalInputs() {
+    modalInputMinutes.value = ""
+    modalInputSeconds.value = ""
+  }
+
+  function setTime() {
+    inputMinutes.innerText = String(modalInputMinutes.value).padStart(2, "0")
+    inputSeconds.innerText = String(modalInputSeconds.value).padStart(2, "0")
+
+    if (buttonPlay.disabled == true) enableButton(buttonPlay)
+  }
+
+  return { countdown, updateTime, disableButton, enableButton, toggleControls, pauseTimer, toggleButtonMinusDisabledEnabled, incrementMinutes, decrementMinutes, toggleOnOffModalSetTime, resetModalInputs, setTime }
 }
