@@ -82,13 +82,48 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
   }
 
   function setTime() {
-    if (modalInputMinutes.value == undefined) modalInputMinutes.value = 0
-    if (modalInputSeconds.value == undefined) modalInputSeconds.value = 0
+    if (modalInputMinutes.value.length == 0) modalInputMinutes.value = 0
+    if (modalInputSeconds.value.length == 0) modalInputSeconds.value = 0
+
+    // console.log(modalInputMinutes.value)
+    // console.log(modalInputSeconds.value)
+
+    // let isOnlyNumber = regexToVerifyIfIsOnlyNumbers()
+
+    // console.log(isOnlyNumber)
+
+    // if (isOnlyNumber) {
+
+    //   inputMinutes.innerText = String(modalInputMinutes.value).padStart(2, "0")
+    //   inputSeconds.innerText = String(modalInputSeconds.value).padStart(2, "0")
+
+    //   if (buttonPlay.disabled == true) enableButton(buttonPlay)
+
+    // } else {
+    //   incorrectInputAnimation()
+    // }
+
 
     inputMinutes.innerText = String(modalInputMinutes.value).padStart(2, "0")
     inputSeconds.innerText = String(modalInputSeconds.value).padStart(2, "0")
 
     if (buttonPlay.disabled == true) enableButton(buttonPlay)
+
+  }
+
+  function regexToVerifyIfIsOnlyNumbers() {
+    const regex = new RegExp("^[0-9]+$")
+
+    if (regex.test(modalInputMinutes.value) && regex.test(modalInputSeconds.value)) {
+      return true
+    } else {
+      return false
+    }
+
+  }
+
+  function incorrectInputAnimation() {
+    console.log("incorrectInputAnimation")
   }
 
   return { countdown, updateTime, disableButton, enableButton, toggleControls, pauseTimer, toggleButtonMinusDisabledEnabled, incrementMinutes, decrementMinutes, toggleOnOffModalSetTime, resetModalInputs, setTime }

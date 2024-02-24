@@ -40,6 +40,9 @@ export function TimerControls(utils, buttonPlay, inputMinutes, inputSeconds, but
   function setNewTime() {
 
     // Aqui preciso criar uma regex para aceitar apenas entradas numéricas positivas e criar também uma animação de erro ao digitar um dado fora do aceitável
+
+    utils.setTime()
+    utils.toggleOnOffModalSetTime()
   }
 
   return { play, pause, plus, minus, stop, handleModalSetTime, setNewTime }
