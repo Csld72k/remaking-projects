@@ -4,6 +4,8 @@ import { TimerControls } from "./timer-controls.js"
 import { TimerUtils } from "./timer-utils.js"
 import { TimerEvents } from "./timer-events.js"
 import { SoundControls } from "./sound-controls.js"
+import { SoundUtils } from "./sound-utils.js"
+import { SoundEvents } from "./sound-events.js"
 
 const {
   lightModeClass,
@@ -24,7 +26,12 @@ const {
   modalSetTime,
   buttonSetTime,
   modalInputMinutes,
-  modalInputSeconds
+  modalInputSeconds,
+  card,
+  forestCard,
+  rainCard,
+  coffeeShopCard,
+  bonfireCard
 } = Elements
 
 const toggleTheme = ToggleTheme(
@@ -34,10 +41,14 @@ const toggleTheme = ToggleTheme(
   darkModeClass
 )
 
-const soundControls = SoundControls()
+const soundUtils = SoundUtils()
+
+const soundControls = SoundControls(soundUtils)
 
 const timerUtils = TimerUtils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus, modalSetTime, modalInputMinutes, modalInputSeconds, buttonPlay, buttonSetTime, soundControls)
 
 const timerControls = TimerControls(timerUtils, buttonPlay, buttonSetTime)
 
 TimerEvents(toggleTheme, timerControls, buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonChangeTime, buttonSetTime, modalInputMinutes, modalInputSeconds, timerUtils.verifyIfInputIsAllowed, timerUtils.setTimeByPressingEnter)
+
+SoundEvents(soundControls, forestCard, rainCard, coffeeShopCard, bonfireCard)
