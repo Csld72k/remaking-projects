@@ -18,7 +18,9 @@ export function SoundUtils() {
 
   function playSound(card) {
 
-    switch (card.classList[1]) {
+    let cardName = card.classList[1]
+
+    switch (cardName) {
       case "forest": forestSound.play()
         break
       case "rain": rainSound.play()

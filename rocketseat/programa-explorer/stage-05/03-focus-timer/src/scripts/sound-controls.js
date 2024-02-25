@@ -3,16 +3,20 @@ export function SoundControls(soundUtils) {
 
   }
 
-  function handleFunctionality() {
-    this.classList.toggle("selected")
-    // let card = this
-    // console.log(card)
-    // soundUtils.playPauseSound(this)
+  function handleFunctionality(event) {
 
-    if (this.classList.contains("selected")) soundUtils.playSound(this)
-    else soundUtils.pauseSound(this)
+    let card = this
+    let cardSVG = this.querySelector("svg")
+    let cardSVGPath = this.querySelector("svg path")
+    let inputRange = this.querySelector(".input-range")
 
+    if ((event.target == card || event.target == cardSVG || event.target == cardSVGPath) && event.target !== inputRange) {
 
+      this.classList.toggle("selected")
+
+      if (this.classList.contains("selected")) soundUtils.playSound(this)
+      else soundUtils.pauseSound(this)
+    }
   }
 
   return { endOfTimeSound, handleFunctionality }
