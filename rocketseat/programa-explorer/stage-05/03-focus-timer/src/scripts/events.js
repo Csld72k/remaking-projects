@@ -2,7 +2,7 @@
 
 // const { buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonChangeTime } = Elements
 
-export function Events(toggleTheme, timerControls, buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonChangeTime, buttonSetTime) {
+export function Events(toggleTheme, timerControls, buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonChangeTime, buttonSetTime, modalInputMinutes, modalInputSeconds, verifyIfInputIsAllowed) {
 
   buttonToggleTheme.addEventListener("click", toggleTheme)
 
@@ -19,4 +19,8 @@ export function Events(toggleTheme, timerControls, buttonToggleTheme, buttonPlay
   buttonChangeTime.addEventListener("click", timerControls.handleModalSetTime)
 
   buttonSetTime.addEventListener("click", timerControls.setNewTime)
+
+  modalInputMinutes.addEventListener("input", verifyIfInputIsAllowed)
+
+  modalInputSeconds.addEventListener("input", verifyIfInputIsAllowed)
 }

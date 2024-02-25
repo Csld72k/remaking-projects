@@ -1,6 +1,6 @@
 import { Elements } from "./elements.js"
 
-export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus, modalSetTime, modalInputMinutes, modalInputSeconds, buttonPlay) {
+export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus, modalSetTime, modalInputMinutes, modalInputSeconds, buttonPlay, buttonSetTime) {
 
   let minutes
   let seconds
@@ -67,7 +67,6 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
 
   function toggleButtonMinusDisabledEnabled() {
     let minutes = Number(inputMinutes.textContent)
-    // let seconds = Number(inputSeconds.textContent)
     if (minutes < 1 && buttonMinus.disabled == false) disableButton(buttonMinus)
     else if (minutes > 0 && buttonMinus.disabled == true) enableButton(buttonMinus)
   }
@@ -82,28 +81,6 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
   }
 
   function setTime() {
-    if (modalInputMinutes.value.length == 0) modalInputMinutes.value = 0
-    if (modalInputSeconds.value.length == 0) modalInputSeconds.value = 0
-
-    // console.log(modalInputMinutes.value)
-    // console.log(modalInputSeconds.value)
-
-    // let isOnlyNumber = regexToVerifyIfIsOnlyNumbers()
-
-    // console.log(isOnlyNumber)
-
-    // if (isOnlyNumber) {
-
-    //   inputMinutes.innerText = String(modalInputMinutes.value).padStart(2, "0")
-    //   inputSeconds.innerText = String(modalInputSeconds.value).padStart(2, "0")
-
-    //   if (buttonPlay.disabled == true) enableButton(buttonPlay)
-
-    // } else {
-    //   incorrectInputAnimation()
-    // }
-
-
     inputMinutes.innerText = String(modalInputMinutes.value).padStart(2, "0")
     inputSeconds.innerText = String(modalInputSeconds.value).padStart(2, "0")
 
@@ -111,20 +88,15 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
 
   }
 
-  function regexToVerifyIfIsOnlyNumbers() {
-    const regex = new RegExp("^[0-9]+$")
+  function verifyIfInputIsAllowed() {
+    let minutesIsFilled = modalInputMinutes.value.length > 0
+    let minutesIsBetweenAcceptedNumbers = modalInputMinutes.value >= 0 && modalInputMinutes.value <= 1440
+    let secondsIsFilled = modalInputSeconds.value.length > 0
+    let secondsIsBetweenAcceptedNumbers = modalInputSeconds.value >= 0 && modalInputSeconds.value <= 60
 
-    if (regex.test(modalInputMinutes.value) && regex.test(modalInputSeconds.value)) {
-      return true
-    } else {
-      return false
-    }
-
+    if (minutesIsFilled && minutesIsBetweenAcceptedNumbers && secondsIsFilled && secondsIsBetweenAcceptedNumbers) enableButton(buttonSetTime)
+    else disableButton(buttonSetTime)
   }
 
-  function incorrectInputAnimation() {
-    console.log("incorrectInputAnimation")
-  }
-
-  return { countdown, updateTime, disableButton, enableButton, toggleControls, pauseTimer, toggleButtonMinusDisabledEnabled, incrementMinutes, decrementMinutes, toggleOnOffModalSetTime, resetModalInputs, setTime }
+  return { countdown, updateTime, disableButton, enableButton, toggleControls, pauseTimer, toggleButtonMinusDisabledEnabled, incrementMinutes, decrementMinutes, toggleOnOffModalSetTime, resetModalInputs, setTime, verifyIfInputIsAllowed }
 }

@@ -33,8 +33,8 @@ const toggleTheme = ToggleTheme(
   darkModeClass
 )
 
-const utils = Utils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus, modalSetTime, modalInputMinutes, modalInputSeconds, buttonPlay)
+const utils = Utils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus, modalSetTime, modalInputMinutes, modalInputSeconds, buttonPlay, buttonSetTime)
 
-const timerControls = TimerControls(utils, buttonPlay, inputMinutes, inputSeconds, buttonMinus, modalSetTime, modalInputMinutes, modalInputSeconds)
+const timerControls = TimerControls(utils, buttonPlay)
 
-Events(toggleTheme, timerControls, buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonChangeTime, buttonSetTime)
+Events(toggleTheme, timerControls, buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonChangeTime, buttonSetTime, modalInputMinutes, modalInputSeconds, utils.verifyIfInputIsAllowed)

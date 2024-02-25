@@ -2,7 +2,7 @@
 
 // const { buttonPlay, inputMinutes, inputSeconds, modalSetTime } = Elements
 
-export function TimerControls(utils, buttonPlay, inputMinutes, inputSeconds, buttonMinus, modalSetTime, modalInputMinutes, modalInputSeconds) {
+export function TimerControls(utils, buttonPlay) {
 
   function play() {
     utils.disableButton(buttonPlay)
@@ -38,12 +38,13 @@ export function TimerControls(utils, buttonPlay, inputMinutes, inputSeconds, but
   }
 
   function setNewTime() {
-
-    // Aqui preciso criar uma regex para aceitar apenas entradas numéricas positivas e criar também uma animação de erro ao digitar um dado fora do aceitável
-
     utils.setTime()
     utils.toggleOnOffModalSetTime()
   }
 
-  return { play, pause, plus, minus, stop, handleModalSetTime, setNewTime }
+  function verifyIfUserIsTypingNumber() {
+    utils.verifyIfInputIsAllowed()
+  }
+
+  return { play, pause, plus, minus, stop, handleModalSetTime, setNewTime, verifyIfUserIsTypingNumber }
 }

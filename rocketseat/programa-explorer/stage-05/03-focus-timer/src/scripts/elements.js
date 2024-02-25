@@ -14,7 +14,7 @@ const inputSeconds = document.querySelector(".seconds")
 const timerControls1 = document.querySelector(".icons-1")
 const timerControls2 = document.querySelector(".icons-2")
 const modalSetTime = document.querySelector(".modal-set-time")
-const buttonSetTime = document.querySelector(".input-container > i")
+const buttonSetTime = document.querySelector(".input-container > button")
 const modalInputMinutes = document.querySelector("#minutes-to-set")
 const modalInputSeconds = document.querySelector("#seconds-to-set")
 

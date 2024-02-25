@@ -133,16 +133,16 @@ main {
   fill: var(--primary-color);
 }
 
-.controls button[disabled] {
+.controls button:disabled {
   cursor: default;
 }
 
-.controls button[disabled] svg path {
+.controls button:disabled svg path {
   filter: brightness(20%);
   cursor: default;
 }
 
-.controls button[disabled] svg:hover path {
+.controls button:disabled svg:hover path {
   fill: var(--primary-color);
 }
 
@@ -332,9 +332,33 @@ main {
   align-items: center;
 }
 
-.modal-set-time i {
+.modal-set-time button {
+  background-color: transparent;
+
+  color: var(--primary-color);
+  cursor: default;
+}
+
+
+
+.modal-set-time button i {
   margin-left: .5rem;
   cursor: pointer;
+}
+
+.modal-set-time button i::before {
+  width: 4rem;
+  height: 5rem;
+
+  font-size: 4rem;
+  transition: .2s;
+}
+
+.modal-set-time button:disabled i::before {
+  color: var(--primary-color);
+
+  filter: brightness(20%);
+  cursor: default;
 }
 
 .modal-set-time.disabled {
