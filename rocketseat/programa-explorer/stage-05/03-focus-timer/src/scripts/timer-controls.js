@@ -1,7 +1,3 @@
-// import { Elements } from "./elements.js"
-
-// const { buttonPlay, inputMinutes, inputSeconds, modalSetTime } = Elements
-
 export function TimerControls(utils, buttonPlay) {
 
   function play() {

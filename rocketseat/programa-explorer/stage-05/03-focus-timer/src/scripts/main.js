@@ -1,8 +1,9 @@
 import { Elements } from "./elements.js"
 import { ToggleTheme } from "./toggle-theme.js"
 import { TimerControls } from "./timer-controls.js"
-import { Utils } from "./utils.js"
-import { Events } from "./events.js"
+import { TimerUtils } from "./timer-utils.js"
+import { TimerEvents } from "./timer-events.js"
+import { SoundControls } from "./sound-controls.js"
 
 const {
   lightModeClass,
@@ -33,8 +34,10 @@ const toggleTheme = ToggleTheme(
   darkModeClass
 )
 
-const utils = Utils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus, modalSetTime, modalInputMinutes, modalInputSeconds, buttonPlay, buttonSetTime)
+const soundControls = SoundControls()
 
-const timerControls = TimerControls(utils, buttonPlay)
+const timerUtils = TimerUtils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus, modalSetTime, modalInputMinutes, modalInputSeconds, buttonPlay, buttonSetTime, soundControls)
 
-Events(toggleTheme, timerControls, buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonChangeTime, buttonSetTime, modalInputMinutes, modalInputSeconds, utils.verifyIfInputIsAllowed)
+const timerControls = TimerControls(timerUtils, buttonPlay)
+
+TimerEvents(toggleTheme, timerControls, buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonChangeTime, buttonSetTime, modalInputMinutes, modalInputSeconds, timerUtils.verifyIfInputIsAllowed)

@@ -1,6 +1,4 @@
-import { Elements } from "./elements.js"
-
-export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus, modalSetTime, modalInputMinutes, modalInputSeconds, buttonPlay, buttonSetTime) {
+export function TimerUtils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus, modalSetTime, modalInputMinutes, modalInputSeconds, buttonPlay, buttonSetTime, soundControls) {
 
   let minutes
   let seconds
@@ -17,6 +15,7 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
         if (minutes === 0) {
           clearInterval(timer)
           toggleControls()
+          soundControls.endOfTimeSound()
         } else {
           --minutes
           seconds = 59

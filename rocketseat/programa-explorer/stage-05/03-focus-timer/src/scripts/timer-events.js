@@ -1,4 +1,4 @@
-export function Events(toggleTheme, timerControls, buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonChangeTime, buttonSetTime, modalInputMinutes, modalInputSeconds, verifyIfInputIsAllowed) {
+export function TimerEvents(toggleTheme, timerControls, buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonChangeTime, buttonSetTime, modalInputMinutes, modalInputSeconds, verifyIfInputIsAllowed) {
 
   buttonToggleTheme.addEventListener("click", toggleTheme)
 
