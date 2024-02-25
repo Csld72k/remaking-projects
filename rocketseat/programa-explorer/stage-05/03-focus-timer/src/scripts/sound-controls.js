@@ -9,7 +9,7 @@ export function SoundControls(soundUtils) {
     // console.log(card)
     // soundUtils.playPauseSound(this)
 
-    if (this.classList.contains("selected")) soundUtils.play(this)
+    if (this.classList.contains("selected")) soundUtils.playSound(this)
     else soundUtils.pause(this)
 
 
