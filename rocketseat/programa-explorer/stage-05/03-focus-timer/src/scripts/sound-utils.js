@@ -1,7 +1,7 @@
 export function SoundUtils() {
 
   const forestSound = new Audio("https://github.com/Csld72k/remaking-projects/blob/main/rocketseat/programa-explorer/stage-05/03-focus-timer/src/sounds/forest.wav?raw=true")
-  const rainSound = new Audio("https://drive.google.com/u/0/uc?id=1Ip8xBqAUJ-bty51Wz8JBtX_bWXCgA0P2&export=download")
+  const rainSound = new Audio("https://github.com/Csld72k/remaking-projects/blob/main/rocketseat/programa-explorer/stage-05/03-focus-timer/src/sounds/rain.mp3?raw=true")
   const coffeeShopSound = new Audio("https://github.com/Csld72k/remaking-projects/blob/main/rocketseat/programa-explorer/stage-05/03-focus-timer/src/sounds/coffee-shop.wav?raw=true")
   const bonfireSound = new Audio("https://github.com/Csld72k/remaking-projects/blob/main/rocketseat/programa-explorer/stage-05/03-focus-timer/src/sounds/bonfire.wav?raw=true")
 
@@ -9,10 +9,10 @@ export function SoundUtils() {
   rainSound.loop = true
   coffeeShopSound.loop = true
   bonfireSound.loop = true
-  forestSound.volume = 1
-  rainSound.volume = 1
-  coffeeShopSound.volume = 1
-  bonfireSound.volume = 1
+  forestSound.volume = .5
+  rainSound.volume = .5
+  coffeeShopSound.volume = .5
+  bonfireSound.volume = .5
 
 
 
@@ -28,11 +28,21 @@ export function SoundUtils() {
       case "bonfire": bonfireSound.play()
         break
     }
-
   }
 
-  function pause(card) {
+  function pauseSound(card) {
+
+    switch (card.classList[1]) {
+      case "forest": forestSound.pause()
+        break
+      case "rain": rainSound.pause()
+        break
+      case "coffee-shop": coffeeShopSound.pause()
+        break
+      case "bonfire": bonfireSound.pause()
+        break
+    }
   }
 
-  return { playSound, pause }
+  return { playSound, pauseSound }
 }

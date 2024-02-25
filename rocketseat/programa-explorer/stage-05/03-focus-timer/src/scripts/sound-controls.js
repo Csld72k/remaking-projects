@@ -10,7 +10,7 @@ export function SoundControls(soundUtils) {
     // soundUtils.playPauseSound(this)
 
     if (this.classList.contains("selected")) soundUtils.playSound(this)
-    else soundUtils.pause(this)
+    else soundUtils.pauseSound(this)
 
 
   }
