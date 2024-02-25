@@ -89,9 +89,9 @@ export function Utils(inputMinutes, inputSeconds, timerControls1, timerControls2
   }
 
   function verifyIfInputIsAllowed() {
-    let minutesIsFilled = modalInputMinutes.value.length > 0
+    let minutesIsFilled = modalInputMinutes.value.length > 0 && modalInputMinutes.value.length < 5
     let minutesIsBetweenAcceptedNumbers = modalInputMinutes.value >= 0 && modalInputMinutes.value <= 1440
-    let secondsIsFilled = modalInputSeconds.value.length > 0
+    let secondsIsFilled = modalInputSeconds.value.length > 0 && modalInputSeconds.value.length < 3
     let secondsIsBetweenAcceptedNumbers = modalInputSeconds.value >= 0 && modalInputSeconds.value <= 60
 
     if (minutesIsFilled && minutesIsBetweenAcceptedNumbers && secondsIsFilled && secondsIsBetweenAcceptedNumbers) enableButton(buttonSetTime)
