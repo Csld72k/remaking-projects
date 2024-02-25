@@ -1,4 +1,4 @@
-export function TimerEvents(toggleTheme, timerControls, buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonChangeTime, buttonSetTime, modalInputMinutes, modalInputSeconds, verifyIfInputIsAllowed) {
+export function TimerEvents(toggleTheme, timerControls, buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonChangeTime, buttonSetTime, modalInputMinutes, modalInputSeconds, verifyIfInputIsAllowed, setTimeByPressingEnter) {
 
   buttonToggleTheme.addEventListener("click", toggleTheme)
 
@@ -19,4 +19,6 @@ export function TimerEvents(toggleTheme, timerControls, buttonToggleTheme, butto
   modalInputMinutes.addEventListener("input", verifyIfInputIsAllowed)
 
   modalInputSeconds.addEventListener("input", verifyIfInputIsAllowed)
+
+  window.addEventListener("keydown", setTimeByPressingEnter)
 }

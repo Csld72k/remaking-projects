@@ -38,6 +38,6 @@ const soundControls = SoundControls()
 
 const timerUtils = TimerUtils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus, modalSetTime, modalInputMinutes, modalInputSeconds, buttonPlay, buttonSetTime, soundControls)
 
-const timerControls = TimerControls(timerUtils, buttonPlay)
+const timerControls = TimerControls(timerUtils, buttonPlay, buttonSetTime)
 
-TimerEvents(toggleTheme, timerControls, buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonChangeTime, buttonSetTime, modalInputMinutes, modalInputSeconds, timerUtils.verifyIfInputIsAllowed)
+TimerEvents(toggleTheme, timerControls, buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonChangeTime, buttonSetTime, modalInputMinutes, modalInputSeconds, timerUtils.verifyIfInputIsAllowed, timerUtils.setTimeByPressingEnter)

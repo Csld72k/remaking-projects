@@ -74,6 +74,16 @@ export function TimerUtils(inputMinutes, inputSeconds, timerControls1, timerCont
     modalSetTime.classList.toggle("disabled")
   }
 
+  function setTimeByPressingEnter(event) {
+    if (!modalSetTime.classList.contains("disabled")) {
+      if (event.key == "Enter") {
+        setTime()
+        toggleOnOffModalSetTime()
+      }
+    }
+
+  }
+
   function resetModalInputs() {
     modalInputMinutes.value = ""
     modalInputSeconds.value = ""
@@ -97,5 +107,5 @@ export function TimerUtils(inputMinutes, inputSeconds, timerControls1, timerCont
     else disableButton(buttonSetTime)
   }
 
-  return { countdown, updateTime, disableButton, enableButton, toggleControls, pauseTimer, toggleButtonMinusDisabledEnabled, incrementMinutes, decrementMinutes, toggleOnOffModalSetTime, resetModalInputs, setTime, verifyIfInputIsAllowed }
+  return { countdown, updateTime, disableButton, enableButton, toggleControls, pauseTimer, toggleButtonMinusDisabledEnabled, incrementMinutes, decrementMinutes, toggleOnOffModalSetTime, resetModalInputs, setTime, verifyIfInputIsAllowed, setTimeByPressingEnter }
 }

@@ -1,4 +1,4 @@
-export function TimerControls(utils, buttonPlay) {
+export function TimerControls(utils, buttonPlay, buttonSetTime) {
 
   function play() {
     utils.disableButton(buttonPlay)
@@ -29,6 +29,7 @@ export function TimerControls(utils, buttonPlay) {
   }
 
   function handleModalSetTime() {
+    this.blur()
     utils.resetModalInputs()
     utils.toggleOnOffModalSetTime()
   }
