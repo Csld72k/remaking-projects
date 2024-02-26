@@ -1,9 +1,9 @@
 export function SoundControls(soundUtils) {
   function endOfTimeSound() {
-
+    // Falta fazer aqui
   }
 
-  function handleFunctionality(event) {
+  function handleSoundFunctionality(event) {
 
     let card = this
     let cardSVG = this.querySelector("svg")
@@ -19,5 +19,7 @@ export function SoundControls(soundUtils) {
     }
   }
 
-  return { endOfTimeSound, handleFunctionality }
+
+
+  return { endOfTimeSound, handleSoundFunctionality }
 }

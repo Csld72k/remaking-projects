@@ -31,7 +31,8 @@ const {
   forestCard,
   rainCard,
   coffeeShopCard,
-  bonfireCard
+  bonfireCard,
+  inputRange
 } = Elements
 
 const toggleTheme = ToggleTheme(
@@ -51,4 +52,4 @@ const timerControls = TimerControls(timerUtils, buttonPlay, buttonSetTime)
 
 TimerEvents(toggleTheme, timerControls, buttonToggleTheme, buttonPlay, buttonPause, buttonPlus, buttonMinus, buttonStop, buttonChangeTime, buttonSetTime, modalInputMinutes, modalInputSeconds, timerUtils.verifyIfInputIsAllowed, timerUtils.setTimeByPressingEnter)
 
-SoundEvents(soundControls, forestCard, rainCard, coffeeShopCard, bonfireCard)
+SoundEvents(card, soundControls, inputRange)

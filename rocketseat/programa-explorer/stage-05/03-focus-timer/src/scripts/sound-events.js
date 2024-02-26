@@ -1,10 +1,6 @@
-export function SoundEvents(soundControls, forestCard, rainCard, coffeeShopCard, bonfireCard) {
+export function SoundEvents(card, soundControls, inputRange) {
 
-  forestCard.addEventListener("click", soundControls.handleFunctionality)
+  card.forEach(element => { element.addEventListener("click", soundControls.handleSoundFunctionality) });
 
-  rainCard.addEventListener("click", soundControls.handleFunctionality)
 
-  coffeeShopCard.addEventListener("click", soundControls.handleFunctionality)
-
-  bonfireCard.addEventListener("click", soundControls.handleFunctionality)
 }
