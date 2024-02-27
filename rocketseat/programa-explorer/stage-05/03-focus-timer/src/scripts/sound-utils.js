@@ -21,6 +21,7 @@ export function SoundUtils() {
     let cardName = card.classList[1]
 
     switch (cardName) {
+
       case "forest": forestSound.play()
         break
       case "rain": rainSound.play()
@@ -34,7 +35,10 @@ export function SoundUtils() {
 
   function pauseSound(card) {
 
-    switch (card.classList[1]) {
+    let cardName = card.classList[1]
+
+    switch (cardName) {
+
       case "forest": forestSound.pause()
         break
       case "rain": rainSound.pause()
@@ -46,5 +50,20 @@ export function SoundUtils() {
     }
   }
 
-  return { playSound, pauseSound }
+  function changeVolumeLevel(inputRangeID, newVolume) {
+
+    switch (inputRangeID) {
+
+      case "forest-volume": forestSound.volume = newVolume
+        break
+      case "rain-volume": rainSound.volume = newVolume
+        break
+      case "coffee-shop-volume": coffeeShopSound.volume = newVolume
+        break
+      case "bonfire-volume": bonfireSound.volume = newVolume
+        break
+    }
+  }
+
+  return { playSound, pauseSound, changeVolumeLevel }
 }

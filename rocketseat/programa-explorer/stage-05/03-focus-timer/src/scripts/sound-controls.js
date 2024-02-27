@@ -19,7 +19,12 @@ export function SoundControls(soundUtils) {
     }
   }
 
+  function handleVolumeFunctionality() {
 
+    let newVolume = this.value / 10
 
-  return { endOfTimeSound, handleSoundFunctionality }
+    soundUtils.changeVolumeLevel(this.id, newVolume)
+  }
+
+  return { endOfTimeSound, handleSoundFunctionality, handleVolumeFunctionality }
 }

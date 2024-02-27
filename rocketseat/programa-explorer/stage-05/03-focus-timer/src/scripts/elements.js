@@ -22,7 +22,7 @@ const forestCard = document.querySelector(".forest")
 const rainCard = document.querySelector(".rain")
 const coffeeShopCard = document.querySelector(".coffee-shop")
 const bonfireCard = document.querySelector(".bonfire")
-const inputRange = document.querySelector(".input-range")
+const inputRange = document.querySelectorAll(".input-range")
 
 export const Elements = {
   lightModeClass,

@@ -1,6 +1,6 @@
 export function SoundEvents(card, soundControls, inputRange) {
 
-  card.forEach(element => { element.addEventListener("click", soundControls.handleSoundFunctionality) });
+  card.forEach(card => card.addEventListener("click", soundControls.handleSoundFunctionality));
 
-
+  inputRange.forEach(inputRange => inputRange.addEventListener("input", soundControls.handleVolumeFunctionality))
 }
