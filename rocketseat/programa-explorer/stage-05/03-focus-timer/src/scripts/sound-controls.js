@@ -1,6 +1,7 @@
-export function SoundControls(soundUtils) {
+export function SoundControls(soundUtils, card) {
   function endOfTimeSound() {
-    // Falta fazer aqui
+    soundUtils.stopAllSounds()
+    card.forEach(card => card.classList.toggle("selected"));
   }
 
   function handleSoundFunctionality(event) {

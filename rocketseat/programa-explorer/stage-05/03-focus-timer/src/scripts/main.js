@@ -44,7 +44,7 @@ const toggleTheme = ToggleTheme(
 
 const soundUtils = SoundUtils()
 
-const soundControls = SoundControls(soundUtils)
+const soundControls = SoundControls(soundUtils, card)
 
 const timerUtils = TimerUtils(inputMinutes, inputSeconds, timerControls1, timerControls2, buttonMinus, modalSetTime, modalInputMinutes, modalInputSeconds, buttonPlay, buttonSetTime, soundControls)
 

@@ -4,6 +4,7 @@ export function SoundUtils() {
   const rainSound = new Audio("https://github.com/Csld72k/remaking-projects/blob/main/rocketseat/programa-explorer/stage-05/03-focus-timer/src/sounds/rain.mp3?raw=true")
   const coffeeShopSound = new Audio("https://github.com/Csld72k/remaking-projects/blob/main/rocketseat/programa-explorer/stage-05/03-focus-timer/src/sounds/coffee-shop.wav?raw=true")
   const bonfireSound = new Audio("https://github.com/Csld72k/remaking-projects/blob/main/rocketseat/programa-explorer/stage-05/03-focus-timer/src/sounds/bonfire.wav?raw=true")
+  const endOfTimeSound = new Audio("https://github.com/Csld72k/remaking-projects/blob/main/rocketseat/programa-explorer/stage-05/03-focus-timer/src/sounds/end-timer-sound.mp3?raw=true")
 
   forestSound.loop = true
   rainSound.loop = true
@@ -13,8 +14,17 @@ export function SoundUtils() {
   rainSound.volume = .5
   coffeeShopSound.volume = .5
   bonfireSound.volume = .5
+  endOfTimeSound.volume = .2
 
+  function stopAllSounds() {
 
+    forestSound.pause()
+    rainSound.pause()
+    coffeeShopSound.pause()
+    bonfireSound.pause()
+    endOfTimeSound.play()
+
+  }
 
   function playSound(card) {
 
@@ -65,5 +75,5 @@ export function SoundUtils() {
     }
   }
 
-  return { playSound, pauseSound, changeVolumeLevel }
+  return { stopAllSounds, playSound, pauseSound, changeVolumeLevel }
 }
