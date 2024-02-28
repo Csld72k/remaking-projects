@@ -93,6 +93,7 @@ export function TimerUtils(inputMinutes, inputSeconds, timerControls1, timerCont
     inputMinutes.innerText = String(modalInputMinutes.value).padStart(2, "0")
     inputSeconds.innerText = String(modalInputSeconds.value).padStart(2, "0")
 
+    if (modalInputMinutes.value > 0) enableButton(buttonMinus)
     if (buttonPlay.disabled == true) enableButton(buttonPlay)
 
   }

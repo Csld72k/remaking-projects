@@ -1,7 +1,7 @@
 export function SoundControls(soundUtils, card) {
   function endOfTimeSound() {
     soundUtils.stopAllSounds()
-    card.forEach(card => card.classList.toggle("selected"));
+    card.forEach(card => card.classList.remove("selected"));
   }
 
   function handleSoundFunctionality(event) {
