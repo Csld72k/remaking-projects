@@ -84,7 +84,7 @@ button {
 
 main {
   display: flex;
-  gap: 19rem;
+  gap: clamp(1rem, 13vw, 19rem);
 }
 
 .timer-container {
@@ -364,4 +364,12 @@ main {
 .modal-set-time.disabled {
   visibility: hidden;
   opacity: 0;
+}
+
+@media (max-width: 800px) {
+  main {
+    flex-direction: column;
+
+    gap: 7rem;
+  }
 }
