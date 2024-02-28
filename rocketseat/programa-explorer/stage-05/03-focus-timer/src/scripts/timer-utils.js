@@ -29,7 +29,7 @@ export function TimerUtils(inputMinutes, inputSeconds, timerControls1, timerCont
 
       if (minutes == 0) toggleButtonMinusDisabledEnabled()
 
-    }, 500)
+    }, 1000)
 
 
   }

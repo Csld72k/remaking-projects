@@ -367,6 +367,12 @@ main {
 }
 
 @media (max-width: 800px) {
+
+  .toggle-light-dark-mode {
+    top: .5rem;
+    right: .5rem;
+  }
+
   main {
     flex-direction: column;
 
