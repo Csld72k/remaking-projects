@@ -7,27 +7,12 @@ export class Favorites {
 
   load() {
 
-    this.users = [
-      {
-        login: "csld72k",
-        name: "Claudiney Silva",
-        public_repos: "34",
-        followers: "1"
-      },
-      {
-        login: "diego3g",
-        name: "Diego Fernandes",
-        public_repos: "76",
-        followers: "1234321"
-      }
-    ]
+    this.users = JSON.parse(localStorage.getItem("@github-favorites:")) || []
 
   }
 
   delete(userToDelete) {
-    const updatedUsers = this.users.filter(user => userToDelete.login !== user.login)
-
-    this.users = updatedUsers
+    this.users = this.users.filter(user => userToDelete.login !== user.login)
 
   }
 }
