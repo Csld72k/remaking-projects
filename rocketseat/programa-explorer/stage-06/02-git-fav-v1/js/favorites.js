@@ -40,7 +40,6 @@ export class Favorites {
       alert(error.message)
 
     }
-
   }
 
   delete(userToDelete) {
@@ -98,9 +97,6 @@ export class FavoritesView extends Favorites {
       this.tbody.append(row)
 
     })
-
-
-
   }
 
   createRow() {
@@ -127,5 +123,4 @@ export class FavoritesView extends Favorites {
     this.tbody.querySelectorAll("tr").forEach((tr) => tr.remove())
 
   }
-
 }
