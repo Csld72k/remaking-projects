@@ -32,6 +32,11 @@ export class Favorites {
 
     try {
 
+      const userIsAlreadyRegistered = this.users.find(user => user.login === userName)
+      console.log(userIsAlreadyRegistered)
+
+      if (userIsAlreadyRegistered) throw new Error("user is already registered!")
+
       const user = await GithubUser.search(userName)
 
       if (user.login === undefined) throw new Error("User not found!")
