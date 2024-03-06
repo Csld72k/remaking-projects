@@ -24,7 +24,9 @@ export class Favorites {
 
   }
 
-
+  save() {
+    localStorage.setItem("@github-favorites:", JSON.stringify(this.users))
+  }
 
   async add(userName) {
 
@@ -36,6 +38,7 @@ export class Favorites {
 
       this.users = [user, ...this.users]
       this.update()
+      this.save()
 
     } catch (error) {
 
@@ -46,7 +49,10 @@ export class Favorites {
   }
 
   delete(userToDelete) {
+
     this.users = this.users.filter(user => userToDelete.login !== user.login)
+    this.update()
+    this.save()
 
   }
 }
