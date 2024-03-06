@@ -16,7 +16,9 @@ export class Favorites {
   }
 
   save() {
+
     localStorage.setItem("@github-favorites:", JSON.stringify(this.users))
+
   }
 
   async add(userName) {
@@ -25,7 +27,7 @@ export class Favorites {
 
       const userIsAlreadyRegistered = this.users.find(user => user.login === userName)
 
-      if (userIsAlreadyRegistered) throw new Error("user is already registered!")
+      if (userIsAlreadyRegistered) throw new Error("User is already registered!")
 
       const user = await GithubUser.search(userName)
 
