@@ -1,8 +1,8 @@
 export class GithubUser {
 
-  static search(username) {
+  static search(userName) {
 
-    const endpoint = `https://api.github.com/users/${username}`
+    const endpoint = `https://api.github.com/users/${userName}`
 
     return fetch(endpoint).then(data => data.json().then(({ login, name, public_repos, followers }) => ({ login, name, public_repos, followers })))
 
@@ -24,6 +24,13 @@ export class Favorites {
 
   }
 
+  async add(userName) {
+
+    const user = await GithubUser.search(userName)
+    console.log(user)
+
+  }
+
   delete(userToDelete) {
     this.users = this.users.filter(user => userToDelete.login !== user.login)
 
@@ -38,7 +45,18 @@ export class FavoritesView extends Favorites {
 
     this.tbody = this.root.querySelector("table tbody")
     this.update()
+    this.onAdd()
 
+  }
+
+  onAdd() {
+    const addButton = this.root.querySelector(".search button")
+    addButton.onclick = () => {
+
+      const { value } = this.root.querySelector(".search input")
+
+      this.add(value)
+    }
   }
 
   update() {
