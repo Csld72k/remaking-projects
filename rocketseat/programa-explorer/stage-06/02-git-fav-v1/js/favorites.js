@@ -1,13 +1,4 @@
-export class GithubUser {
-
-  static search(userName) {
-
-    const endpoint = `https://api.github.com/users/${userName}`
-
-    return fetch(endpoint).then(data => data.json().then(({ login, name, public_repos, followers }) => ({ login, name, public_repos, followers })))
-
-  }
-}
+import { GithubUser } from "./GithubUser.js"
 
 export class Favorites {
 
@@ -33,7 +24,6 @@ export class Favorites {
     try {
 
       const userIsAlreadyRegistered = this.users.find(user => user.login === userName)
-      console.log(userIsAlreadyRegistered)
 
       if (userIsAlreadyRegistered) throw new Error("user is already registered!")
 
@@ -91,6 +81,7 @@ export class FavoritesView extends Favorites {
       const row = this.createRow()
       row.querySelector(".user img").src = `https://github.com/${user.login}.png`
       row.querySelector(".user img").alt = `${user.name} image`
+      row.querySelector(".user a").href = `https://github.com/${user.login}`
       row.querySelector(".user p").textContent = user.name
       row.querySelector(".user span").textContent = user.login
       row.querySelector(".repositories").textContent = user.public_repos
