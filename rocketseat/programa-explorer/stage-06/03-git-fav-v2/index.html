@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Github Favorites</title>
+</head>
+
+<body style="background-color: red;">
+
+  <header>
+
+    <div class="logo">
+      <span><img src="./src/assets/logo.svg" alt="Logo image"></span>
+    </div>
+
+    <form>
+
+      <fieldset>
+
+        <label for="github-username">Type the Github username you want to favorite</label>
+
+        <input type="text" id="github-username" placeholder="Type the Github username you want to favorite">
+
+        <button>
+          <img src="./src/assets/star-button-favorite.svg" alt="Star image">
+          Favorite
+        </button>
+
+      </fieldset>
+
+    </form>
+
+  </header>
+
+  <main>
+
+    <table>
+
+      <thead>
+
+        <tr>
+
+          <td>User</td>
+          <td>Repositories</td>
+          <td>Followers</td>
+          <td>Action</td>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr class="empty-list disabled">
+          <td>
+            <img src="./src/assets/star-empty-users-list.svg" alt="Star image"> No favorites yet
+          </td>
+        </tr>
+
+        <tr>
+          <td class="user">
+            <img class="user-image" src="https://github.com/csld72k.png" alt="">
+            <span class="name">Claudiney Silva</span>
+            <span>/csld72k</span>
+          </td>
+
+          <td class="repositories">
+            <span>34</span>
+          </td>
+
+          <td class="followers">
+            0
+          </td>
+
+          <td class="action">
+            <button class="remove">Remove</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="user">
+            <img class="user-image" src="https://github.com/diego3g.png" alt="">
+            <span class="name">Diego Fernandes</span>
+            <span>/diego3g</span>
+          </td>
+
+          <td class="repositories">
+            <span>89</span>
+          </td>
+
+          <td class="followers">
+            29490
+          </td>
+
+          <td class="action">
+            <button class="remove">Remove</button>
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </main>
+
+</body>
+
+</html>
