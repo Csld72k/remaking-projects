@@ -1,6 +1,8 @@
 :root {
-  --background-color: #000;
+  --bg-color: #000;
   --text-color: #fff;
+  --table-thead-bg-color: #092D38;
+  --table-tbody-bg-color: #030B0D;
 
   font-size: 62.5%;
 }
@@ -43,21 +45,28 @@ button {
   border-width: 0;
 }
 
+.disabled {
+  display: none;
+  visibility: hidden;
+}
+
 input, textarea, button {
   font-size: 1.6rem;
 }
 
 body {
-  margin: 11.5rem 16rem;
+  height: 100vh;
+  padding: 5rem 22rem;
   display: flex;
   flex-direction: column;
-  row-gap: 8rem;
+  row-gap: 5rem;
 
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   line-height: 2.4rem;
 
-  background-color: var(--background-color);
+  background-color: var(--bg-color);
+  color: var(--text-color)
 }
 
 header {
@@ -103,4 +112,83 @@ header form fieldset button {
   background-color: #065E7C;
   color: var(--text-color);
   border-radius: .5rem;
+}
+
+main table {
+  width: 100%;
+
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-radius: 1.2rem;
+  box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
+}
+
+main thead {
+  width: 50rem;
+  height: 6.4rem;
+
+  background-color: var(--table-thead-bg-color);
+}
+
+main thead tr {
+  font-size: 2rem;
+  font-weight: bold;
+
+  border-radius: 1.2rem;
+}
+
+main thead tr td {
+  padding-left: 4rem;
+}
+
+main thead tr td:nth-child(1) {
+  width: 50rem;
+}
+
+main thead tr td:nth-child(2), main thead tr td:nth-child(3) {
+  width: 21rem;
+}
+
+main thead tr td:nth-child(4) {
+  width: 18rem;
+}
+
+main thead tr td:first-child {
+  border-top-left-radius: 1.2rem;
+}
+
+main thead tr td:last-child {
+  border-top-right-radius: 1.2rem;
+}
+
+main tbody {
+  height: 70vh;
+}
+
+main tbody tr td:first-child {
+  border-bottom-left-radius: 1.2rem;
+}
+
+main tbody tr td:last-child {
+  border-bottom-right-radius: 1.2rem;
+}
+
+main tbody.empty-list {
+  background-color: var(--table-tbody-bg-color);
+}
+
+main tbody.empty-list tr .wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5rem
+}
+
+main tbody.empty-list tr td {
+  font-size: 2.5rem;
+  font-weight: bold;
+
+  color: #4e5455;
 }

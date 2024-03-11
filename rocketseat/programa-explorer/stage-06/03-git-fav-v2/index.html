@@ -56,16 +56,23 @@
 
       </thead>
 
-      <tbody>
+      <tbody class="empty-list">
 
-        <tr class="empty-list disabled">
-          <td>
-            <img src="./src/assets/star-empty-users-list.svg" alt="Star image"> No favorites yet
+        <tr class="empty-list ">
+          <td colspan="4">
+            <div class="wrapper">
+              <img src="./src/assets/star-empty-users-list.svg" alt="Star image">
+              <span>No favorites yet</span>
+            </div>
           </td>
         </tr>
 
+      </tbody>
+
+      <tbody class="filled-list disabled">
+
         <tr>
-          <td class="user">
+          <td class="user ">
             <img class="user-image" src="https://github.com/csld72k.png" alt="">
             <span class="name">Claudiney Silva</span>
             <span>/csld72k</span>
@@ -84,7 +91,7 @@
           </td>
         </tr>
 
-        <tr>
+        <tr class="disabled">
           <td class="user">
             <img class="user-image" src="https://github.com/diego3g.png" alt="">
             <span class="name">Diego Fernandes</span>
