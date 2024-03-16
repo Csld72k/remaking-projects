@@ -1,5 +1,4 @@
-import { GithubAPIConsumption } from "./Github-api-consumption.js"
+import { FavoritesView } from "./FavoritesView.js"
 
-const a = await GithubAPIConsumption.search("csld72k")
 
-console.log(a)
+new FavoritesView("main")
