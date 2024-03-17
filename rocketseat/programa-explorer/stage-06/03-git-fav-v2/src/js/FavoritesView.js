@@ -1,6 +1,6 @@
-import { Favorites } from "./Favorites.js"
+import { FavoritesData } from "./FavoritesData.js"
 
-export class FavoritesView extends Favorites {
+export class FavoritesHandler extends FavoritesData {
 
   constructor(root) {
     super(root)
