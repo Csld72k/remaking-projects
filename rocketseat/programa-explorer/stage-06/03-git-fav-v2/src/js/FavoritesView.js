@@ -15,7 +15,35 @@ export class FavoritesView extends Favorites {
 
   }
 
+  createRow() {
 
+    const rowDataUser = document.createElement("tr")
+
+    rowDataUser.innerHTML = `
+    <td class="user">
+      <img class="user-image" src="https://github.com/csld72k.png" alt="">
+      <a href="https://github.com/csld72k">
+        <span class="name">Claudiney Silva</span>
+        <span class="username">/csld72k</span>
+      </a>
+    </td>
+
+    <td class="repositories">
+      34
+    </td>
+
+    <td class="followers">
+      0
+    </td>
+
+    <td class="action">
+      <button class="remove">Remove</button>
+    </td>
+    `
+
+    return rowDataUser
+
+  }
 
   removeAllUsers() {
 
