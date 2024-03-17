@@ -25,8 +25,19 @@ export class FavoritesView extends Favorites {
 
       this.tbody.append(row)
 
+      row.querySelector(".remove").onclick = () => {
+        this.delete(user)
+        this.update()
+      }
+
     })
 
+  }
+
+  removeCurrentUser(user, row) {
+    console.log(user)
+    console.log(row)
+    row.remove()
   }
 
   createRow() {

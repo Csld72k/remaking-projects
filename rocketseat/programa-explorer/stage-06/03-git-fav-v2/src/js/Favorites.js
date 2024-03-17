@@ -24,6 +24,12 @@ export class Favorites {
 
       }
     ]
+  }
+
+  delete(userToDelete) {
+
+    const filteredUsersList = this.users.filter(user => user.login !== userToDelete.login)
+    this.users = filteredUsersList
 
   }
 
