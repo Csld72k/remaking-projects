@@ -7,6 +7,7 @@ export class FavoritesHandler extends FavoritesData {
 
     this.tbody = this.root.querySelector("table tbody.filled-list")
     this.update()
+    this.searchUser()
 
   }
 
@@ -26,11 +27,25 @@ export class FavoritesHandler extends FavoritesData {
       this.tbody.append(row)
 
       row.querySelector(".remove").onclick = () => {
-        this.delete(user)
+        this.deleteUser(user)
         this.update()
-      }
 
+      }
     })
+  }
+
+  searchUser() {
+
+    const searchButton = document.querySelector(".search-user")
+
+    searchButton.onclick = (event) => {
+
+      event.preventDefault()
+      const username = document.querySelector("#github-username").value
+      this.addUser(username)
+
+    }
+
 
   }
 
@@ -46,18 +61,16 @@ export class FavoritesHandler extends FavoritesData {
 
     rowDataUser.innerHTML = `
     <td class="user">
-      <img class="user-image" src="https://github.com/csld72k.png" alt="Profile picture">
-      <a href="https://github.com/csld72k">
-        <span class="name">Claudiney Silva</span>
-        <span class="username">/csld72k</span>
+      <img class="user-image" src="" alt="Profile picture">
+      <a href="">
+        <span class="name"></span>
+        <span class="username"></span>
       </a>
     </td>
 
-    <td class="repositories">
-    </td>
+    <td class="repositories"></td>
 
-    <td class="followers">
-    </td>
+    <td class="followers"></td>
 
     <td class="action">
       <button class="remove">Remove</button>

@@ -1,22 +1,50 @@
-export class Favorites {
+import { GithubAPIConsumption } from "./Github-api-consumption.js"
+
+export class FavoritesData {
 
   constructor(root) {
 
     this.root = document.querySelector(root)
-    this.load()
+    this.loadUsers()
 
   }
 
-  load() {
+  loadUsers() {
 
     this.users = JSON.parse(localStorage.getItem("@github-favorites:")) || []
 
   }
 
-  delete(userToDelete) {
+  deleteUser(userToDelete) {
 
     const filteredUsersList = this.users.filter(user => user.login !== userToDelete.login)
     this.users = filteredUsersList
+
+  }
+
+  async addUser(username) {
+
+    console.log(username)
+    this.users.forEach((user) => { console.log(user.login) })
+
+    try {
+
+      const userIsAlreadyRegistered = this.users.find(user => user.login.toLowerCase() === username.toLowerCase())
+
+      if (userIsAlreadyRegistered) throw new Error("User is already registered!")
+
+      const newUser = await GithubAPIConsumption.Search(username)
+
+      if (newUser.login === undefined) throw new Error("User not found!")
+
+      this.users = [newUser, ...this.users]
+      this.update()
+
+    } catch (error) {
+
+      alert(error.message)
+
+    }
 
   }
 
