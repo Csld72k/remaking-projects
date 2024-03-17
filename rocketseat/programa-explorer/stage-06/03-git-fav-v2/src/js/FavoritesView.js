@@ -5,6 +5,7 @@ export class FavoritesView extends Favorites {
   constructor(root) {
     super(root)
 
+    this.tbody = this.root.querySelector("table tbody.filled-list")
     this.update()
 
   }
@@ -12,6 +13,19 @@ export class FavoritesView extends Favorites {
   update() {
 
     this.removeAllUsers()
+
+    this.users.forEach((user) => {
+
+      const row = this.createRow()
+      row.querySelector("img").src = `https://github.com/${user.login}.png`
+      row.querySelector(".name").innerText = user.name
+      row.querySelector(".username").innerText = user.login
+      row.querySelector(".repositories").innerText = user.public_repos
+      row.querySelector(".followers").innerText = user.followers
+
+      this.tbody.append(row)
+
+    })
 
   }
 
@@ -21,7 +35,7 @@ export class FavoritesView extends Favorites {
 
     rowDataUser.innerHTML = `
     <td class="user">
-      <img class="user-image" src="https://github.com/csld72k.png" alt="">
+      <img class="user-image" src="https://github.com/csld72k.png" alt="Profile picture">
       <a href="https://github.com/csld72k">
         <span class="name">Claudiney Silva</span>
         <span class="username">/csld72k</span>
@@ -29,11 +43,9 @@ export class FavoritesView extends Favorites {
     </td>
 
     <td class="repositories">
-      34
     </td>
 
     <td class="followers">
-      0
     </td>
 
     <td class="action">
@@ -47,9 +59,7 @@ export class FavoritesView extends Favorites {
 
   removeAllUsers() {
 
-    const tbody = this.root.querySelector("table tbody.filled-list")
-
-    tbody.querySelectorAll("tr").forEach((row) => { row.remove() })
+    this.tbody.querySelectorAll("tr").forEach((row) => { row.remove() })
 
   }
 
