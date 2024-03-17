@@ -45,14 +45,6 @@ export class FavoritesHandler extends FavoritesData {
       this.addUser(username)
 
     }
-
-
-  }
-
-  removeCurrentUser(user, row) {
-    console.log(user)
-    console.log(row)
-    row.remove()
   }
 
   createRow() {
@@ -86,5 +78,4 @@ export class FavoritesHandler extends FavoritesData {
     this.tbody.querySelectorAll("tr").forEach((row) => { row.remove() })
 
   }
-
 }

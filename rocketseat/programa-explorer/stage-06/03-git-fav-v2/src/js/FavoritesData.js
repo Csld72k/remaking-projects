@@ -24,9 +24,6 @@ export class FavoritesData {
 
   async addUser(username) {
 
-    console.log(username)
-    this.users.forEach((user) => { console.log(user.login) })
-
     try {
 
       const userIsAlreadyRegistered = this.users.find(user => user.login.toLowerCase() === username.toLowerCase())
@@ -45,7 +42,5 @@ export class FavoritesData {
       alert(error.message)
 
     }
-
   }
-
 }
