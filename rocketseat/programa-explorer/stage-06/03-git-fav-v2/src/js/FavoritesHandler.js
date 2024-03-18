@@ -19,6 +19,7 @@ export class FavoritesHandler extends FavoritesData {
 
       const row = this.createRow()
       row.querySelector("img").src = `https://github.com/${user.login}.png`
+      row.querySelector("a").href = `https://github.com/${user.login}`
       row.querySelector(".name").innerText = user.name
       row.querySelector(".username").innerText = user.login
       row.querySelector(".repositories").innerText = user.public_repos
@@ -54,7 +55,7 @@ export class FavoritesHandler extends FavoritesData {
     rowDataUser.innerHTML = `
     <td class="user">
       <img class="user-image" src="" alt="Profile picture">
-      <a href="">
+      <a href="" target="_blank">
         <span class="name"></span>
         <span class="username"></span>
       </a>

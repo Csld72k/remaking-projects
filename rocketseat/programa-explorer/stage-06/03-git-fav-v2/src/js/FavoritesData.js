@@ -15,10 +15,15 @@ export class FavoritesData {
 
   }
 
+  saveUsers() {
+    localStorage.setItem("@github-favorites:", JSON.stringify(this.users))
+  }
+
   deleteUser(userToDelete) {
 
     const filteredUsersList = this.users.filter(user => user.login !== userToDelete.login)
     this.users = filteredUsersList
+    this.saveUsers()
 
   }
 
@@ -35,6 +40,7 @@ export class FavoritesData {
       if (newUser.login === undefined) throw new Error("User not found!")
 
       this.users = [newUser, ...this.users]
+      this.saveUsers()
       this.update()
 
     } catch (error) {
