@@ -7,6 +7,7 @@ export class FavoritesHandler extends FavoritesData {
     super(root)
     this.filledTbody = this.root.querySelector("tbody.filled-list")
     this.update()
+    this.searchUser()
 
   }
 
@@ -55,7 +56,23 @@ export class FavoritesHandler extends FavoritesData {
   }
 
   removeAllUsers() {
+
     this.filledTbody.querySelectorAll("tr").forEach(user => user.remove())
+
+  }
+
+  searchUser() {
+
+    const buttonSearch = document.querySelector(".search-user")
+
+    buttonSearch.onclick = (event) => {
+
+      event.preventDefault()
+      const usernameToSearch = document.querySelector("#github-username").value
+      this.addUser(usernameToSearch)
+
+    }
+
   }
 
 }
