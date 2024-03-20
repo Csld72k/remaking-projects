@@ -12,8 +12,8 @@ export class FavoritesHandler extends FavoritesData {
 
   update() {
 
+    this.removeAllUsers()
     this.loadUsers()
-    console.log(this.users)
     this.users.forEach(user => {
 
       const row = this.createRow()
@@ -23,12 +23,10 @@ export class FavoritesHandler extends FavoritesData {
       row.querySelector(".username").innerText = user.login
       row.querySelector(".repositories").innerText = user.public_repos
       row.querySelector(".followers").innerText = user.followers
-
+      row.querySelector(".remove").onclick = () => this.deleteUser(user.login)
       this.filledTbody.append(row)
 
-
     })
-
   }
 
   createRow() {
@@ -54,6 +52,10 @@ export class FavoritesHandler extends FavoritesData {
 
     return row
 
+  }
+
+  removeAllUsers() {
+    this.filledTbody.querySelectorAll("tr").forEach(user => user.remove())
   }
 
 }
