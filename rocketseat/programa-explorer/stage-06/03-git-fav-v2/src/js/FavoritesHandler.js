@@ -6,6 +6,7 @@ export class FavoritesHandler extends FavoritesData {
 
     super(root)
     this.filledTbody = this.root.querySelector("tbody.filled-list")
+    this.emptyTbody = this.root.querySelector("tbody.empty-list")
     this.update()
     this.searchUser()
 
@@ -14,7 +15,7 @@ export class FavoritesHandler extends FavoritesData {
   update() {
 
     this.removeAllUsers()
-    this.loadUsers()
+
     this.users.forEach(user => {
 
       const row = this.createRow()
@@ -28,12 +29,31 @@ export class FavoritesHandler extends FavoritesData {
       this.filledTbody.append(row)
 
     })
+
+    this.toggleTableBackground()
+
+  }
+
+  toggleTableBackground() {
+
+    if (this.users.length === 0) {
+
+      this.emptyTbody.classList.remove("disabled")
+      this.filledTbody.classList.add("disabled")
+
+    } else {
+
+      this.emptyTbody.classList.add("disabled")
+      this.filledTbody.classList.remove("disabled")
+
+    }
+
   }
 
   createRow() {
 
-    const row = document.createElement("tr")
-    row.innerHTML = `
+    const userDataRow = document.createElement("tr")
+    userDataRow.innerHTML = `
     <td class="user">
       <img class="user-image" src="" alt="Profile picture">
       <a href="" target="_blank">
@@ -51,7 +71,7 @@ export class FavoritesHandler extends FavoritesData {
     </td>
     `
 
-    return row
+    return userDataRow
 
   }
 
@@ -72,7 +92,5 @@ export class FavoritesHandler extends FavoritesData {
       this.addUser(usernameToSearch)
 
     }
-
   }
-
 }

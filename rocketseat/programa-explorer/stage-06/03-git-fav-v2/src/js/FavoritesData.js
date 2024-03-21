@@ -1,8 +1,11 @@
+import { GithubAPIConsumption } from "./Github-api-consumption.js"
+
 export class FavoritesData {
 
   constructor(root) {
 
     this.root = document.querySelector(root)
+    this.loadUsers()
   }
 
   loadUsers() {
@@ -26,4 +29,26 @@ export class FavoritesData {
 
   }
 
+  async addUser(usernameToSearch) {
+
+    try {
+
+      const userIsAlreadyRegistered = this.users.find(user => user.login.toLowerCase() === usernameToSearch.toLowerCase())
+
+      if (userIsAlreadyRegistered) throw new Error("User is already registered!")
+
+      const newUser = await GithubAPIConsumption.search(usernameToSearch)
+
+      if (newUser.login === undefined) throw new Error("User not found!")
+
+      this.users = [newUser, ...this.users]
+      this.saveUsers()
+      this.update()
+
+    } catch (error) {
+
+      alert(error.message)
+
+    }
+  }
 }
