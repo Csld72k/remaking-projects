@@ -7,5 +7,8 @@
   },
   "author": "Claudiney Silva",
   "license": "ISC",
-  "description": "API desenvolvida no Programa Explorer da Rocketseat"
+  "description": "API desenvolvida no Programa Explorer da Rocketseat",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
