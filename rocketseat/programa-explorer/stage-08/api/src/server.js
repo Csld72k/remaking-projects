@@ -2,21 +2,8 @@ const express = require("express");
 
 const app = express();
 
-// route params
-app.get("/message/:id/:user", (request, response) => {
-  const { id, user } = request.params;
-
-  response.send(`
-    Hello, world! 
-    Message ID: ${id}
-    Username: ${user}`)
-})
-
-// query params
-app.get("/users", (request, response) => {
-  const { page, limit } = request.query
-
-  response.send(`Page: ${page}. Limit: ${limit}`)
+app.post("/users", (request, response) => {
+  response.send(`You called the POST method!`)
 })
 
 const PORT = 3333
