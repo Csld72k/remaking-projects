@@ -9,7 +9,7 @@ app.get("/message/:id/:user", (request, response) => {
   response.send(`
     Hello, world! 
     Message ID: ${id}
-    User: ${user}`)
+    Username: ${user}`)
 })
 
 // query params
