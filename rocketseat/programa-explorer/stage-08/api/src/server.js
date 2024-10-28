@@ -1,23 +1,14 @@
 const express = require("express");
 
+const routes = require("./routes");
+
 const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
-app.post("/users", (request, response) => {
-  const { name, email, password } = request.body
+app.use(routes)
 
-  //   response.send(`
-  //     User: ${name} - 
-  //     E-mail: ${email} - 
-  //     Password: ${password}
-  //     `)
-  // })
+const PORT = 3333;
 
-  response.json({ name, email, password })
-})
-
-const PORT = 3333
-
-app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 
